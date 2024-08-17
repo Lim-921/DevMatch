@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../../assets/FundifyLogo.png";
 import CreateWalletModal from "../ConnectWallet (Marcus)/ConnectWallet";
-import LoginModal from "../Login (Marcus)/Login"; // Import the LoginModal component
+import LoginModal from "../Login (Marcus)/Login";
 import SignOutModal from "../SignOut (Marcus)/SignOut";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,10 +12,11 @@ import "react-toastify/dist/ReactToastify.css";
 const NavBar = () => {
   const [sticky, setSticky] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // State for Login Modal
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [walletAddress, setWalletAddress] = useState(null);
   const [isSignOutModalOpen, setIsSignOutModalOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // useNavigate for redirecting after sign out
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +47,7 @@ const NavBar = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsLoginModalOpen(false); // Ensure both modals are closed
+    setIsLoginModalOpen(false);
     setIsSignOutModalOpen(false);
   };
 
@@ -58,8 +59,10 @@ const NavBar = () => {
   const handleLogin = (walletAddress) => {
     setWalletAddress(walletAddress);
     sessionStorage.setItem("walletAddress", walletAddress);
-    // Removed the toast.success call from here
+    // Removed toast.success from here to avoid duplicate calls
+    closeModal(); // Close the modal after login
   };
+  
 
   const handleSubmit = async (data) => {
     try {
@@ -111,8 +114,9 @@ const NavBar = () => {
   const handleSignOut = () => {
     sessionStorage.removeItem("walletAddress");
     setWalletAddress(null);
-    toast.success("You have successfully signed out.");
     closeModal();
+    toast.success("You have successfully signed out.");
+    navigate("/"); // Redirect to home after signing out
   };
 
   const truncateAddress = (address) => {
@@ -189,7 +193,7 @@ const NavBar = () => {
             <button
               className="btn"
               onClick={openModal}
-              disabled={isSignOutModalOpen || isModalOpen || isLoginModalOpen} // Enable button when not in modal
+              disabled={isSignOutModalOpen || isModalOpen || isLoginModalOpen}
             >
               {walletAddress
                 ? truncateAddress(walletAddress)
@@ -202,7 +206,7 @@ const NavBar = () => {
         <CreateWalletModal
           onSubmit={handleSubmit}
           onClose={closeModal}
-          onSwitchToLogin={switchToLogin} // Pass the switch function
+          onSwitchToLogin={switchToLogin}
         />
       )}
       {isLoginModalOpen && (

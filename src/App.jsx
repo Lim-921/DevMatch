@@ -9,7 +9,8 @@ import Testimonials from "./Compenent/Testimonials (HaoZhe)/Testimonials";
 import Footer from "./Compenent/Footer (HaoZhe)/Footer";
 import Contact from "./Compenent/Contact (HaoZhe)/Contact";
 import Transaction from "./Compenent/Transaction (HaoZhe)/Transaction";
-import Category from "./Compenent/Category (Kaile)/Category"; // Import Category component
+import Category from "./Compenent/Category (Kaile)/Category";
+import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; // Import MainPage component
 
 const App = () => {
   return (
@@ -46,6 +47,9 @@ const App = () => {
 
           {/* Category Page Route */}
           <Route path="/category" element={<Category />} />
+
+          {/* MainPage Route */}
+          <Route path="/mainpage" element={<MainPage />} /> {/* Add this line */}
         </Routes>
       </div>
     </Router>

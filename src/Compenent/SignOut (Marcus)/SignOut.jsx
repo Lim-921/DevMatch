@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignOut.css"; // Ensure this file includes the necessary styles
+import "./SignOut.css";
 
 const SignOutModal = ({ onClose, onSignOut }) => {
   return (

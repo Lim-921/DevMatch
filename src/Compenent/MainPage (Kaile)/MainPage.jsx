@@ -3,8 +3,8 @@ import './MainPage.css';
 import temp_pic from '../../assets/Food Assistance Programs.png';
 import temp_pic2 from '../../assets/Clean Water Initiatives.png';
 import temp_pic3 from '../../assets/Education for Underserved Communities.png';
-import next_arrow from '../assets/nextbutton.png';
-import back_arrow from '../assets/backbutton.png';
+import next_arrow from '../../assets/nextbutton.png';  // Correct the import path
+import back_arrow from '../../assets/backbutton.png';  // Correct the import path
 
 const MainPage = () => {
     const [images, setImages] = useState([temp_pic, temp_pic2, temp_pic3]);

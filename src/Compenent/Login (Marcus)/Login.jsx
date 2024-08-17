@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import "./Login.css"; // Assuming you're using the same styling
-import { toast } from "react-toastify"; // Import toast for notifications
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import "./Login.css"; 
+import { toast } from "react-toastify"; 
 
 const LoginModal = ({ onClose, onLogin }) => {
   const [ic, setIc] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ const LoginModal = ({ onClose, onLogin }) => {
       onLogin(walletAddress);
       onClose();
       toast.success("Logged in successfully!");
+      navigate("/mainpage"); // Redirect to the mainpage
     } else {
       toast.error("Incorrect IC number or password. Please try again.");
     }
