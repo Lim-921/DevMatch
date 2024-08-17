@@ -10,12 +10,12 @@ const Bantuan = () => {
     const [activeTab, setActiveTab] = useState('Available Financial Aids');
 
     useEffect(() => {
-        // Scroll to the top of the page when this component is rendered
+        
         window.scrollTo(0, 0);
     }, []);
 
     const handleViewMoreClick = () => {
-        navigate('/vote-project');
+        navigate('/bantuan-project');
     };
 
     return (
