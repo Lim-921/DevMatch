@@ -23,7 +23,7 @@ const App = () => {
             element={
               <div>
                 <Hero />
-                <Title subTitle="Transaction Check" title="Verify with Etherscan" />
+                <Title subTitle="Transaction Check" title="Verify with MASCHAIN" />
                 <Transaction />
                 <Title
                   subTitle="Donate to Transparent Programs"
