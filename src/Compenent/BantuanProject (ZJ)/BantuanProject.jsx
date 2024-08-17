@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for routing
+import { Link } from 'react-router-dom'; 
 import './BantuanProject.css';
 
 const BantuanProject = () => {
-    // Define voteScore here
+    
     const voteScore = 1024;
 
     return (
@@ -52,7 +52,7 @@ const BantuanProject = () => {
                                         <li>No significant other financial assistance may be needed.</li>
                                     </ul>
                                 </div>
-                                <Link to="/bantuan-apply">
+                                <Link to="/apply">
                                     <button className='apply-now-button'>Apply Now</button> 
                                 </Link>
                             </div>

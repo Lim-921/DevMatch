@@ -119,6 +119,45 @@
     background-color: #e1e0e0;
 }
 
+.history-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.history-title {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.item-id, .item-name, .item-date, .item-status {
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.title-date{
+    margin-left: 3%;
+}
+
+.title-status {
+    margin-left: 10%;
+}
+
+
+
 @media (min-width: 768px) {
 .view-more-button {
     padding: 0.25em 0.75em;
