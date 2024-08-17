@@ -206,3 +206,54 @@
     background-color: #5a6268;
   }
   
+  /* Overlay that covers the whole page */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dimming effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+/* Container for the modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 00px; /* Further reduced the width */
+  max-width: 90%; /* Ensure it doesn't exceed 90% of the viewport width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+/* Modal Actions - Align buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Cancel Button */
+.modal-actions button:first-of-type {
+  background: #ccc;
+  color: black;
+}
+
+/* Sign Out Button */
+.modal-actions button:last-of-type {
+  background: #d9534f;
+  color: white;
+}

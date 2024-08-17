@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './UserProfile.css';
 import profilePic from '../../assets/ProfilePicture.png';
 import verifiedIcon from '../../assets/verifiedlogo.png';
-import qrCodeImage from '../../assets/QRCode.png'; 
+import qrCodeImage from '../../assets/QRCode.png';
 
 const UserProfile = () => {
     const [showTopUp, setShowTopUp] = useState(false);
+    const navigate = useNavigate(); // Initialize navigate function
 
     const user = {
       username: "JohnDoe",
@@ -15,19 +17,19 @@ const UserProfile = () => {
       balance: "FA 1,688.00",
       avatar: profilePic,
     };
-  
+
     const handleTopUpClick = () => {
       setShowTopUp(true);
     };
-  
+
     const handleClosePopup = () => {
       setShowTopUp(false);
     };
-  
+
     const handleCopyWalletAddress = () => {
       navigator.clipboard.writeText("9bLSRHAujxiaMG47LncUoNV4LoU6VyYr1nRwpSAZdu6n");
     };
-  
+
     return (
       <div className="userprofile">
         <div className="profile-container">
@@ -52,7 +54,7 @@ const UserProfile = () => {
               <button className="top-up-btn" onClick={handleTopUpClick}>Top-Up</button>
             </div>
           </div>
-  
+
           {showTopUp && (
             <div className="top-up-popup">
               <div className="popup-content">
@@ -69,14 +71,18 @@ const UserProfile = () => {
             </div>
           )}
         </div>
-  
+
         {/* LogOut and Back Buttons placed directly below the container */}
         <div className="profile-actions">
-          <button className="logout-btn" onClick={() => console.log("LogOut button clicked")}>LogOut</button>
-          <button className="back-btn" onClick={() => console.log("Back button clicked")}>Back</button>
+          <button className="logout-btn" onClick={() => console.log("LogOut button clicked")}>
+            LogOut
+          </button>
+          <button className="back-btn" onClick={() => navigate('/mainpage')}>
+            Back
+          </button>
         </div>
       </div>
     );
-}
+};
 
-export default UserProfile
+export default UserProfile;
