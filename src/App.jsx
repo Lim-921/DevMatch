@@ -38,7 +38,7 @@ import "react-toastify/dist/ReactToastify.css"; // Import Toast CSS
                 <Programs />
                 <About />
                 <div className="container">
-                  <Title subTitle="Trust" title="Reason We Utilise Blockchain" />
+                  <Title subTitle="Trust" title="Why Blockchain?" />
                   <Testimonials />
                 </div>
                 <Title subTitle="Contact Us" title="Get in Touch" />
