@@ -58,7 +58,7 @@ const NavBar = () => {
   const handleLogin = (walletAddress) => {
     setWalletAddress(walletAddress);
     sessionStorage.setItem("walletAddress", walletAddress);
-    toast.success("Logged in successfully!");
+    // Removed the toast.success call from here
   };
 
   const handleSubmit = async (data) => {
