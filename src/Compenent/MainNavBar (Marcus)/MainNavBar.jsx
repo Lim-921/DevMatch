@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { Link as RouterLink, Link } from "react-router-dom";
 import "./navbar.css"; // Use the common CSS
 import logo from "../../assets/FundifyLogo.png";
 
@@ -51,9 +51,9 @@ const MainNavBar = () => {
             <RouterLink to="/vote">Vote</RouterLink>
           </li>
           <li>
-            <button className="btn">
+            <Link to="/userprofile" className="btn">
               {walletAddress ? truncateAddress(walletAddress) : "Connect Wallet"}
-            </button>
+            </Link>
           </li>
         </ul>
       </nav>
