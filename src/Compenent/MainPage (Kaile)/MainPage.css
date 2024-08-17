@@ -3,60 +3,139 @@
     flex-direction: column;
     align-items: center;
     gap: 20px; 
-    margin-top: 80px;
-    margin-bottom: 50px;
-    position: relative; /* Allows arrow icons to be positioned absolutely */
-    width: 80%; /* Adjusts the width to 80% of the page */
-    margin: 80px auto 50px auto; /* Centers the container horizontally */
+    margin: 80px auto 50px;
+    position: relative; 
+    width: 80%;
+    
+}
+
+.mainpage-background {
+    width: 150%;
+    min-height: 70vh;
+    background: linear-gradient(to top, rgba(212, 212, 212, 0.5), rgba(128, 128, 128, 0.5)); /* Gradient with 0.5 opacity */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -80px;
+}
+
+.contents{
+    margin-top: 20px;
 }
 
 .banner {
     display: flex;
     justify-content: center;
-    align-items: center; /* Center the images vertically */
+    align-items: center;  
     gap: 20px;
     position: relative;
+    
+    
 }
 
 .feature-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Allows arrow icons to be positioned absolutely */
+    position: relative; 
+    
+}
+
+.images {
+    position: relative;
+    display: inline-block; /* Ensure that the container sizes to the image */
 }
 
 .feature-image {
     width: 100%;
     height: auto;
+    opacity: 0.7;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
     border: 2px solid white;
+    transition: transform 0.3s ease;
 }
 
 .feature-image.large {
-    width: 400px; /* Larger width for the middle image */
+    width: 400px;  
 }
 
 .feature-image.small {
-    width: 300px; /* Adjusted to 80% of the middle image's width */
+    width: 300px; 
+}
+
+.feature-image:hover {
+    transform: scale(1.05);
 }
 
 .arrow-icon {
-    width: 30px; /* Adjust size as needed */
+    width: 40px; 
     height: auto;
-    margin-left: 10px; /* Space between the image and arrow */
     position: absolute;
-    bottom: -40px; /* Position arrow below the images */
+    bottom: -80px; 
     cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10; /* Ensure the arrow is above other elements */
+    margin-left: 130px;
 }
 
-.divider {
-    width: 100%;
-    border-top: 2px solid #a3a3a3;
-    margin: 40px 0; /* Spacing around the divider */
+.arrow-icon:hover {
+    opacity: 0.7;
 }
 
-.bantuan , .vote{
+/* Position arrows correctly */
+.feature-container .arrow-icon {
+    left: 10px; /* Adjust as needed */
+}
+
+.feature-container:last-child .arrow-icon {
+    right: 10px; /* Adjust as needed */
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold; /* Use font-weight instead of font-style for bold text */
+    border-radius: 5px;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    background: none; /* Remove background */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), /* Shadow for better visibility */
+                 0 0 1px rgba(0, 0, 0, 0.7); /* Additional shadow for thickness */
+}
+
+
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px; /* Adjust font size as needed */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Ensure the overlay is above the image */
+    background: none; /* Ensure no background color */
+    padding: 0; /* Remove any padding */
+}
+
+.images:hover .text-overlay {
+    opacity: 1;
+}
+
+
+.bantuan, .donate, .vote {
     width: 100%;
     margin: 20px 0;
     display: flex;
@@ -64,14 +143,28 @@
     margin-bottom: 50px;
 }
 
-.bantuan-container, .vote-container{
+.bantuan-container, .vote-container {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* 2 columns: first 2/3, second 1/3 */
+    grid-template-columns: 2fr 1fr;
     background-color: #f0f0f0;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Adjust width as needed */
+    height: 300px; /* Fixed height for uniformity */
+    max-width: 1200px; /* Optional: Max width for larger screens */
+}
+
+.donate-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Image in the first column, text in the second and third columns */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Adjust width as needed */
+    height: 300px; /* Fixed height for uniformity */
+    max-width: 1200px; /* Optional: Max width for larger screens */
 }
 
 .text-section {
@@ -88,35 +181,56 @@
 .text-section p {
     margin: 0;
     line-height: 1.5;
+    text-align: justify;
 }
 
 .image-section {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Ensure image section takes full width of the column */
+    height: 100%; /* Ensure image section takes full height of the container */
 }
 
 .image-section img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the section without distortion */
 }
 
-.donate {
-    width: 100%;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+/* Button styles */
+.button-bantuan, .button-donate, .button-vote {
+    display: inline-block;
+    margin-left: 35%;
+    padding: 10px 20px;
+    width: 150px;
+    margin-top: 15px;
+    background-color: #444444; /* Primary color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.donate-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Image in the first column, text in the next two */
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    
+.button-bantuan:hover, .button-donate:hover, .button-vote:hover {
+    background-color: #ffffff;
+    color: #444444; /* Darker shade of primary color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+}
+
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .bantuan-container, .donate-container, .vote-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        height: auto; /* Allow height to adjust on small screens */
+    }
+
+    .image-section img {
+        object-fit: contain; /* Ensure image fits within container on smaller screens */
+    }
 }
