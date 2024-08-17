@@ -14,6 +14,21 @@
   import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; // MainPage
   import { ToastContainer } from "react-toastify"; // Import ToastContainer
   import 'react-toastify/dist/ReactToastify.css'; // Import Toast CSS
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./Compenent/NavBar (HaoZhe)/NavBar";
+import Hero from "./Compenent/Hero (HaoZhe)/Hero";
+import Programs from "./Compenent/Programs (HaoZhe)/Programs";
+import Title from "./Compenent/Title (HaoZhe)/Title";
+import About from "./Compenent/About (HaoZhe)/About";
+import Testimonials from "./Compenent/Testimonials (HaoZhe)/Testimonials";
+import Footer from "./Compenent/Footer (HaoZhe)/Footer";
+import Contact from "./Compenent/Contact (HaoZhe)/Contact";
+import Transaction from "./Compenent/Transaction (HaoZhe)/Transaction";
+import Category from "./Compenent/Category (Kaile)/Category";
+import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; 
+import Vote from "./Compenent/Vote (Kaile)/Vote"; 
+import Donate from "./Compenent/Donate (Kaile)/Donate"
 
  const App = () => {
   return (
@@ -59,6 +74,14 @@
               </>
             }
           />
+          {/* MainPage Route */}
+          <Route path="/mainpage" element={<MainPage />} />
+
+          {/* Vote Page Route */}
+          <Route path="/vote" element={<Vote />} />
+
+          {/* Donate Page Route */}
+          <Route path="/donate" element={<Donate />} />
         </Routes>
       </div>
     </Router>
