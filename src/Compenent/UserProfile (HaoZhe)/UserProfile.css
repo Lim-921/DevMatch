@@ -1,0 +1,259 @@
+/* Background for the entire page */
+.userprofile {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(25, 25, 25, 0.8), rgba(255, 255, 255, 0.5)), url('../../assets/MainPageBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Container */
+  .profile-container {
+    width: 550px;
+    max-width: 100%;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Content Layout */
+  .profile-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Top: User details with profile picture */
+  .profile-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    border: 4px solid #333;
+  }
+  
+  .user-info {
+    text-align: left;
+  }
+  
+  .user-info h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .user-info p {
+    margin: 0.5rem 0;
+    color: #777;
+  }
+  
+  /* Verified Icon */
+  .verified-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Bottom: User balance */
+  .profile-balance {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-balance h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .profile-balance p {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #007bff;
+  }
+  
+  /* Top-Up Button */
+  .top-up-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .top-up-btn:hover {
+    background-color: #0056b3;
+  }
+
+/* Top-Up Popup */
+.top-up-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup-content {
+    background-color: #1c1c1c;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 430px;
+  }
+  
+  .popup-content .qr-code {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+  }
+  
+  .popup-content .wallet-address {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    word-break: break-all;
+  }
+  
+  .popup-content p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Copy and Close Buttons */
+  .popup-buttons {
+    display: flex;
+    justify-content: center; /* Centering the buttons */
+    gap: 20px; /* Adding space between the buttons */
+    margin-top: 25px;
+  }
+  
+  .copy-wallet-btn,
+  .close-popup-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .copy-wallet-btn:hover,
+  .close-popup-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* LogOut and Back Buttons */
+  .profile-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .logout-btn,
+  .back-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .logout-btn:hover,
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-btn {
+    background-color: #6c757d;
+  }
+  
+  .back-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Overlay that covers the whole page */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dimming effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+/* Container for the modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 00px; /* Further reduced the width */
+  max-width: 90%; /* Ensure it doesn't exceed 90% of the viewport width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+/* Modal Actions - Align buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Cancel Button */
+.modal-actions button:first-of-type {
+  background: #ccc;
+  color: black;
+}
+
+/* Sign Out Button */
+.modal-actions button:last-of-type {
+  background: #d9534f;
+  color: white;
+}
