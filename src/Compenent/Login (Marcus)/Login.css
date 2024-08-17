@@ -1,5 +1,5 @@
 /* Overlay that covers the whole page */
-.modal-overlay {
+.login-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
 }
 
 /* Container for the modal content */
-.modal-content {
+.login-modal-content {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -24,20 +24,20 @@
 }
 
 /* Form Group - Align Labels to Left */
-.form-group {
+.login-form-group {
   margin-bottom: 15px;
   text-align: left; /* Aligns the label to the left */
 }
 
 /* Labels for Form Fields */
-.form-group label {
+.login-form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 /* Input Fields - Full Width */
-.form-group input {
+.login-form-group input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -46,54 +46,56 @@
 }
 
 /* Modal Actions - Align buttons */
-.modal-actions {
+.login-modal-actions {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
 /* Button Styles */
-.modal-actions button {
-  padding: 10px 20px;
+.login-modal-actions button {
+  flex: 1; /* Ensures buttons take up equal space */
+  width: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 0 5px; /* Optional: Adds space between the buttons */
 }
 
 /* Cancel Button */
-.modal-actions button:first-of-type {
+.login-modal-actions button:first-of-type {
   background: #ccc;
   color: black;
 }
 
-.modal-actions button:first-of-type:hover {
+.login-modal-actions button:first-of-type:hover {
   background: #b3b3b3;
 }
 
 /* Login Button */
-.modal-actions button:last-of-type {
+.login-modal-actions button:last-of-type {
   background: #28a745;
   color: white;
 }
 
-.modal-actions button:last-of-type:hover {
+.login-modal-actions button:last-of-type:hover {
   background: #218838;
 }
 
 /* Additional Styling for Switch Link */
-.switch-text {
+.login-switch-text {
   margin-top: 20px;
   font-size: 0.9em;
   color: #555;
 }
 
-.switch-text .login-link {
+.login-switch-text .login-link {
   color: #007bff;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.switch-text .login-link:hover {
+.login-switch-text .login-link:hover {
   color: #0056b3;
 }

@@ -27,11 +27,11 @@ const LoginModal = ({ onClose, onLogin }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="login-modal-overlay">
+      <div className="login-modal-content">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
-          <div className="form-group">
+          <div className="login-form-group">
             <label htmlFor="ic">IC Number</label>
             <input
               type="text"
@@ -41,7 +41,7 @@ const LoginModal = ({ onClose, onLogin }) => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="login-form-group">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -51,7 +51,7 @@ const LoginModal = ({ onClose, onLogin }) => {
               required
             />
           </div>
-          <div className="modal-actions">
+          <div className="login-modal-actions">
             <button type="button" onClick={onClose}>
               Cancel
             </button>
