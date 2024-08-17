@@ -30,7 +30,7 @@ const MainPage = () => {
 
     return (
         <div>
-            <MainNavBar /> {/* Use the new MainNavBar component */}
+            <MainNavBar />
             <div className='main-features'>
                 <div className='mainpage-background'>
                 <div className='banner'>
