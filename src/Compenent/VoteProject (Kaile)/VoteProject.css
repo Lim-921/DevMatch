@@ -172,13 +172,11 @@
     margin: 10px 0;
 }
 
-
 .voting-box-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 15px;
-    
 }
 
 .voting-box-content .item {
@@ -243,10 +241,6 @@
     align-items: center;
 }
 
-.model {
-    opacity: 0;
-}
-
 /* Modal content */
 .modal-content {
     background-color: #fff;
@@ -270,7 +264,6 @@
     padding: 0px; /* Added padding for spacing */
 }
 
-
 .modal-image {
     max-width: 300px;
     margin-right: 30px;
@@ -292,8 +285,6 @@
     margin-left: 20px; /* Center align prompt */
 }
 
-
-
 .comment-box {
     width: 94%; /* Full width for the box */
     height: 150px; /* Slightly smaller height */
@@ -305,7 +296,6 @@
     margin-bottom: 20px; /* Adjusted margin for better spacing */
 }
 
-
 /* Close button */
 .close-button {
     position: absolute;
@@ -314,13 +304,11 @@
     font-size: 24px;
     cursor: pointer;
     color: #aaa;
-    
 }
 
 .close-button:hover {
     color: #000;
 }
-
 
 .confirm-vote-button {
   appearance: none;
@@ -370,3 +358,31 @@
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
+.mint-section, .burn-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mint-amount-input, .burn-amount-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.mint-tokens-button, .burn-tokens-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mint-tokens-button:hover, .burn-tokens-button:hover {
+    background-color: #45a049;
+}
