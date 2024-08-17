@@ -15,7 +15,7 @@ const Bantuan = () => {
     }, []);
 
     const handleViewMoreClick = () => {
-        navigate('/vote-project');
+        navigate('/bantuan-project');
     };
 
     return (

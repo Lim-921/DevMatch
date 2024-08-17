@@ -16,6 +16,7 @@ import Vote from "./Compenent/Vote (Kaile)/Vote";
 import Donate from "./Compenent/Donate (Kaile)/Donate"; 
 import VoteProject from "./Compenent/VoteProject (Kaile)/VoteProject";
 import Bantuan from "./Compenent/Bantuan (Kaile)/Bantuan";
+import BantuanProject from "./Compenent/BantuanProject (ZJ)/BantuanProject";
 import { ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css"; 
 
@@ -77,6 +78,9 @@ import "react-toastify/dist/ReactToastify.css";
 
           {/* Bantuan Page Route */}
           <Route path="/bantuan" element={<Bantuan />} />
+
+          {/* BantuanProject Page Route */}
+          <Route path="/bantuan-project" element={<BantuanProject />} />
 
         </Routes>
       </div>
