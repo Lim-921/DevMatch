@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./Compenent/NavBar (HaoZhe)/NavBar";
+import NavBar from "./Compenent/NavBar (HaoZhe)/NavBar"; // Original Navbar
+import MainNavBar from "./Compenent/MainNavBar (Marcus)/MainNavBar"; // MainPage Navbar
 import Hero from "./Compenent/Hero (HaoZhe)/Hero";
 import Programs from "./Compenent/Programs (HaoZhe)/Programs";
 import Title from "./Compenent/Title (HaoZhe)/Title";
@@ -10,19 +11,24 @@ import Footer from "./Compenent/Footer (HaoZhe)/Footer";
 import Contact from "./Compenent/Contact (HaoZhe)/Contact";
 import Transaction from "./Compenent/Transaction (HaoZhe)/Transaction";
 import Category from "./Compenent/Category (Kaile)/Category";
-import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; // Import MainPage component
+import MainPage from "./Compenent/MainPage (Kaile)/MainPage";
+import Vote from "./Compenent/Vote (Kaile)/Vote"; 
+import Donate from "./Compenent/Donate (Kaile)/Donate"; 
+import VoteProject from "./Compenent/VoteProject (Kaile)/VoteProject";
+import { ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 
-const App = () => {
+ const App = () => {
   return (
     <Router>
       <div>
-        <NavBar />
+        <ToastContainer /> {/* Make sure to include this */}
         <Routes>
-          {/* Home Page Route */}
           <Route
             path="/"
             element={
-              <div>
+              <>
+                <NavBar /> {/* Original NavBar */}
                 <Hero />
                 <Title subTitle="Transaction Check" title="Verify with MASCHAIN" />
                 <Transaction />
@@ -33,7 +39,7 @@ const App = () => {
                 <Programs />
                 <About />
                 <div className="container">
-                  <Title subTitle="Trust" title="Reason We Utilise Blockchain" />
+                  <Title subTitle="Trust" title="Why Blockchain?" />
                   <Testimonials />
                 </div>
                 <Title subTitle="Contact Us" title="Get in Touch" />
@@ -41,15 +47,32 @@ const App = () => {
                   <Contact />
                   <Footer />
                 </div>
-              </div>
+              </>
             }
           />
 
-          {/* Category Page Route */}
           <Route path="/category" element={<Category />} />
 
+          <Route
+            path="/mainpage"
+            element={
+              <>
+                <MainNavBar /> {/* MainNavBar for the MainPage */}
+                <MainPage />
+              </>
+            }
+          />
           {/* MainPage Route */}
-          <Route path="/mainpage" element={<MainPage />} /> {/* Add this line */}
+          <Route path="/mainpage" element={<MainPage />} />
+
+          {/* Vote Page Route */}
+          <Route path="/vote" element={<Vote />} />
+
+          {/* VoteProject Page Route */}
+          <Route path="/vote-project" element={<VoteProject />} />
+
+          {/* Donate Page Route */}
+          <Route path="/donate" element={<Donate />} />
         </Routes>
       </div>
     </Router>
