@@ -2,17 +2,30 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 
-const MintTokenButton = () => {
+const Test = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [status, setStatus] = useState(""); // To show success or failure
   const senderAddress = "0xB3d415ABFAcE59F73A928771bFA332763dbb6a3a";
   const contractAddress = "0x43D1AFD3c2936f3c5d7fCeC6E41C996d2BFeB2a6";
-  const amount = ethers.utils.parseUnits("2000", 1); // Assuming token has 18 decimals
+  const amount = ethers.utils.parseUnits("2000", 18); // Assuming token has 18 decimals
 
   const handleMintToken = async (to) => {
     try {
+      // Check if Ethereum provider is available
+      if (!window.ethereum) {
+        setStatus("Failed: Ethereum provider not found. Install MetaMask or another wallet.");
+        return;
+      }
+
+      // Validate recipient address
+      if (!ethers.utils.isAddress(to)) {
+        setStatus("Failed: Invalid recipient address.");
+        return;
+      }
+
       // Connect to Ethereum provider
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []); // Prompt user to connect wallet
       const signer = provider.getSigner();
 
       // Define contract interaction
@@ -32,7 +45,11 @@ const MintTokenButton = () => {
       setStatus("Success: 2000 tokens sent successfully!");
     } catch (error) {
       // Failure message
-      setStatus(`Failed: ${error.message}`);
+      if (error.code === 4001) {
+        setStatus("Failed: User rejected transaction.");
+      } else {
+        setStatus(`Failed: ${error.message}`);
+      }
     } finally {
       setIsModalOpen(false); // Close modal after transaction
     }
@@ -115,4 +132,4 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
   );
 };
 
-export default MintTokenButton;
+export default Test;
