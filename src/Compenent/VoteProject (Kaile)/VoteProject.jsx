@@ -7,6 +7,7 @@ const VoteProject = () => {
     const [activeTab, setActiveTab] = useState('about');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [voteScore, setVoteScore] = useState(1024);
+    const [isVoteAvailable, setIsVoteAvailable] = useState(true);
 
     const handleVoteClick = () => {
         setIsModalOpen(true);
@@ -17,8 +18,9 @@ const VoteProject = () => {
     };
 
     const handleConfirmVote = () => {
-        setVoteScore(voteScore + 1); // Increment vote score
-        setIsModalOpen(false); // Close the modal after voting
+        setVoteScore(voteScore + 1); 
+        setIsModalOpen(false); 
+        setIsVoteAvailable(false);
     };
 
     return (
@@ -130,9 +132,10 @@ const VoteProject = () => {
                                     <div className='vote-item-title'>No. of Supporters:</div>
                                     <div className='vote-item-detail'>{voteScore}</div> {/* Update here */}
                                 </div>
-
+                            {isVoteAvailable && (
                                 <button className='vote-now-button' onClick={handleVoteClick}>Vote Now</button>
-                            </div>
+                            )}
+                                </div>
                         </div>
                     </div>
                 </div>
