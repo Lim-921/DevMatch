@@ -290,14 +290,14 @@
     margin-top: 20px;
     font-weight: bold;
     text-align: left;
-    margin-left: 15px; /* Center align prompt */
+    margin-left: 20px; /* Center align prompt */
 }
 
 
 
 .comment-box {
-    width: 80%; /* Full width for the box */
-    height: 130px; /* Slightly smaller height */
+    width: 94%; /* Full width for the box */
+    height: 150px; /* Slightly smaller height */
     margin-top: 10px;
     padding: 10px;
     font-size: 1rem;

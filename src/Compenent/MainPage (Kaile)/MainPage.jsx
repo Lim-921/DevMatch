@@ -67,9 +67,11 @@ const MainPage = () => {
                             <div className='text-section'>
                                 <h2>Financial Aids</h2>
                                 <p>Financial aid provided by Government helps in economic stability and social well-being. By offering subsidies, grants, and support, we help mitigate the effects of rising living costs and unemployment. This aid empowers low-income families to access crucial services like healthcare, education, and housing, promoting equality and fostering a stronger, more cohesive society.</p>
+                                <Link to="/bantuan">
                                 <div className='button-bantuan'>
                                     Apply Now
                                 </div>
+                                </Link>
                             </div>
                             <div className='image-section'>
                                 <img src={bantuan_image} alt="Bantuan Image" />
