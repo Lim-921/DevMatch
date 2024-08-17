@@ -1,0 +1,61 @@
+/* Common navbar styles */
+.navbar-common {
+    width: 100%;
+    color: #fff;
+    padding: 6px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background-color: transparent; /* Start with a transparent background */
+    transition: background-color 0.8s ease-in-out, padding 0.8s ease-in-out;
+}
+
+.navbar-common .logo {
+    margin-left: 20px;
+    width: 110px;
+    height: auto;
+}
+
+.navbar-common ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+    font-size: 16px;
+}
+
+.navbar-common ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-common .btn {
+    padding: 5px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.navbar-common.scrolled {
+    background-color: rgb(47, 47, 47, 0.95); /* Change to opaque when scrolled */
+    padding: 8px 0; /* Slightly increase padding to make the navbar a bit taller */
+}
+
+.navbar-common.transparent-nav {
+    background-color: rgba(0, 0, 0, 0.0); /* Fully transparent */
+    transition: background-color 0.8s ease-in-out;
+}
+
+.navbar-common.dark-nav {
+    background-color: rgba(47, 47, 47, 0.95); /* Opaque */
+    transition: background-color 0.5s ease-in-out;
+}

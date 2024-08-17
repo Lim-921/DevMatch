@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import "./navbar-common.css"; // Use the common CSS
 import logo from "../../assets/FundifyLogo.png";
 import CreateWalletModal from "../ConnectWallet (Marcus)/ConnectWallet";
 import LoginModal from "../Login (Marcus)/Login";
@@ -16,11 +16,15 @@ const NavBar = () => {
   const [walletAddress, setWalletAddress] = useState(null);
   const [isSignOutModalOpen, setIsSignOutModalOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate(); // useNavigate for redirecting after sign out or wallet creation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+      if (window.scrollY > 50) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -59,7 +63,6 @@ const NavBar = () => {
   const handleLogin = (walletAddress) => {
     setWalletAddress(walletAddress);
     sessionStorage.setItem("walletAddress", walletAddress);
-    // Removed toast.success from here to avoid duplicate calls
     closeModal(); // Close the modal after login
   };
 
@@ -126,13 +129,9 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className={`container ${sticky ? "dark-nav" : ""}`}>
+      <nav className={`navbar-common ${sticky ? "dark-nav" : "transparent-nav"}`}>
         <RouterLink to="/">
-          <img
-            src={logo}
-            alt="Fundify Logo"
-            style={{ width: "120px", height: "42px" }}
-          />
+          <img src={logo} alt="Fundify Logo" className="logo" />
         </RouterLink>
         <ul>
           <li>

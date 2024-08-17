@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar'; // Use the new MainNavBar
 import './MainPage.css';
 import temp_pic from '../../assets/Food Assistance Programs.png';
 import temp_pic2 from '../../assets/Clean Water Initiatives.png';
@@ -19,6 +20,7 @@ const MainPage = () => {
 
     return (
         <div>
+            <MainNavBar /> {/* Use the new MainNavBar component */}
             <div className='main-features'>
                 <div className='banner'>
                     <div className='feature-container'>
