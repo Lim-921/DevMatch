@@ -14,7 +14,7 @@ const About = () => {
         </div>
         <div className='about-right'>
             <h3>ABOUT FUNDIFY</h3>
-            <h2>Transparency is Importent when Distributing Fund</h2>
+            <h2>Your Funds, Your Visibility.</h2>
             <p>Fundify leverages blockchain technology to transform fund distribution with unparalleled transparency. 
                 By using a secure and immutable ledger, we provide clear, real-time visibility into how funds are 
                 allocated and utilized. This innovative approach ensures that every transaction is fully traceable 
