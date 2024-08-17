@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Bantuan.css';
 import bantuan_project1 from '../../assets/bantuanProject1.jpg';
-import bantuan_project2 from '../../assets/bantuanProject2.jpg';
-import bantuan_project3 from '../../assets/bantuanProject3.webp';
+import bantuan_project3 from '../../assets/bantuanProject2.jpg';
+import bantuan_project2 from '../../assets/bantuanProject3.webp';
 
 const Bantuan = () => {
     const navigate = useNavigate();
@@ -48,8 +48,8 @@ const Bantuan = () => {
 
                 <div className='project-container'>
                     <img src={bantuan_project2} alt='Project 2'/>
-                    <h3>Bantuan SARA 2024 (Sumbangan Asas Rahmah)</h3>
-                    <p>Provides RM300 per month to eligible veterans and their dependents to help with living costs.</p>
+                    <h3>rogram Subsidi Upah (Wage Subsidy Program)</h3>
+                    <p>Support employers in retaining their employees by subsidizing a portion of wages for a set period.</p>
                     <div className='button-container'>
                         <div className='view-more-button'>View More</div>
                     </div>
@@ -57,8 +57,8 @@ const Bantuan = () => {
 
                 <div className='project-container'>
                     <img src={bantuan_project3} alt='Project 3'/>
-                    <h3>Program Subsidi Upah (Wage Subsidy Program)</h3>
-                    <p>Support employers in retaining their employees by subsidizing a portion of wages for a set period.</p>
+                    <h3>Bantuan SARA 2024 (Sumbangan Asas Rahmah)</h3>
+                    <p>Provides RM300 per month to eligible veterans and their dependents to help with living costs.</p>
                     <div className='button-container'>
                         <div className='view-more-button' onClick={handleViewMoreClick}>View More</div>
                     </div>

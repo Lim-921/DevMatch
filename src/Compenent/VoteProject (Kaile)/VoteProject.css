@@ -179,22 +179,6 @@
     padding: 15px;
 }
 
-.voting-box-content .item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-}
-
-.vote-item-title {
-    font-size: 20px;
-}
-
-.vote-item-detail {
-    font-size: 35px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
 .vote-now-button {
     --b: 3px;   
     --s: .45em; 
