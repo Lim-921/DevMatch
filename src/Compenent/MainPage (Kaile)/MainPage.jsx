@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar'; // Use the new MainNavBar
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './MainPage.css';
 import bantuan_image from '../../assets/bantuan-image.jpg';
@@ -29,6 +30,7 @@ const MainPage = () => {
 
     return (
         <div>
+            <MainNavBar /> {/* Use the new MainNavBar component */}
             <div className='main-features'>
                 <div className='mainpage-background'>
                 <div className='banner'>

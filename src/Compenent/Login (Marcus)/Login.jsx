@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";
 import "./Login.css"; 
 import { toast } from "react-toastify"; 
 
 const LoginModal = ({ onClose, onLogin }) => {
   const [ic, setIc] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,8 +18,8 @@ const LoginModal = ({ onClose, onLogin }) => {
 
     if (ic === hardcodedIC && password === hardcodedPassword) {
       onLogin(walletAddress);
+      toast.success("Logged in successfully!"); // Ensure this is correctly placed
       onClose();
-      toast.success("Logged in successfully!");
       navigate("/mainpage"); // Redirect to the mainpage
     } else {
       toast.error("Incorrect IC number or password. Please try again.");
