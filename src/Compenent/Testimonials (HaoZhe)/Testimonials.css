@@ -1,0 +1,72 @@
+.testimonials{
+    margin: 25px auto;
+    padding: 0 80px;
+    position: relative;
+}
+
+.nextbutton, .backbutton{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 15px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.backbutton{
+    right: auto;
+    left: 0;
+}
+
+.slider{
+    overflow: hidden;
+}
+
+.slider ul{
+    display: flex;
+    width: 200%;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*transform: translate(-15%); Change the position of the slider*/
+}
+
+.slider ul li{
+    list-style: none;
+    width: 50%;
+    padding: 20px; /*The space between each of the elements*/
+}
+
+.slide{
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    padding: 40px;
+    border-radius: 10px;
+    color: #676767;
+    line-height: 1.4;
+    width: 100%; /* Make the width consistent */
+    height: 300px; /* Set a fixed height, adjust as needed */
+    margin-bottom: 20px;
+}
+
+.slide img{
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 4px solid #363636;
+}
+
+.userinfo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.userinfo h3{
+    color: black;
+}
+
+.slide p{
+    text-align: justify;
+}

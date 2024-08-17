@@ -1,0 +1,54 @@
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    /*background: url('../../assets/MainPageBackground.png');*/
+    background-image: linear-gradient(rgba(25, 25, 25, 0.8),rgba(255, 255, 255, 0.5)), url('../../assets/MainPageBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text{
+    text-align: center;
+}
+
+.hero-text h1{
+   font-size: 60px;
+   font-weight: 600;
+   max-width: 980px;
+   margin-bottom: 30px;
+}
+
+.hero-text p{
+    max-width: 700px;
+    margin: 10px auto 20px;
+    line-height: 1.4;
+    max-width: 700px;
+    margin-bottom: 30px;
+ }
+
+  .btn1 {
+    background: white;
+    color: #212121;
+    padding: 15px 18px;
+    font-size: 16px;
+    font-weight: bold; /* Makes the text bold */
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.5s, background-color 0.5s; /* Smooth transition for hover effect */
+  }
+  
+  .btn1:hover {
+    color: #ffffff; /* Change text color on hover */
+    background-color: #7c7c7c; /* Change background color on hover */
+    
+  }

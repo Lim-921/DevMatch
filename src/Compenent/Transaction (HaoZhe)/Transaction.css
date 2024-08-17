@@ -1,0 +1,13 @@
+.transaction {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.transaction img {
+    width: 85%; /* Make images occupy the full width */
+    border-radius: 10px;
+    margin-left: 25px; /* Remove left margin */
+    cursor: pointer;
+}

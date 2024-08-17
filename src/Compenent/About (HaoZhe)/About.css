@@ -1,0 +1,38 @@
+.about {
+    margin: 100px auto; /* Center the container horizontally and add vertical margin */
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Align items vertically at the center */
+    justify-content: center; /* Center items horizontally within the container */
+    width: 90%; /* Container width */
+}
+
+.about-left, .about-right {
+    flex: 1; /* Allow both sections to grow equally */
+    max-width: 38%; /* Limit the maximum width of each section */
+}
+
+.about-img{
+    width: 100%;
+    border-radius: 50px;
+}
+
+.about h3{
+    font-weight: 600;
+    font-weight: 16px;
+    color: rgb(15, 20, 45);
+}
+
+.about h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: black;
+    margin: 10px 0;
+    max-width: 1200px;
+}
+
+.about p{
+    color: black;
+    margin-bottom: 15px;
+    max-width: 600px; /* Set maximum width */
+    text-align: justify; /* Justify the text alignment */
+}

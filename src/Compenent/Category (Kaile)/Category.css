@@ -1,0 +1,126 @@
+.category{
+    width: 100%;
+    min-height: 40vh;
+    background: linear-gradient(rgba(41, 41, 41, 0.7), rgba(81, 81, 81, 0.7)), url('../assets/category.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;  
+    text-align: center;
+  }
+  
+  .category-title{
+    text-align: center;
+    max-width: 800px;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .category-description{
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+  
+  .sub-category-bar {
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+    border-bottom: 4px solid #333; /* Line color */
+    padding: 0 0px; /* Add horizontal padding for the line */
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+  }
+  
+  .sub-category-item {
+    flex: 1;
+    text-align: center; /* Center the text horizontally */
+    padding: 10px 0;
+    border-top-left-radius: 10px; /* Rounded top-left corner */
+    border-top-right-radius: 10px; /* Rounded top-right corner */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .sub-category-item.active {
+    background-color: #333; /* Match this color with the line */
+    color: #fff; /* Text color */
+    border-bottom: 2px solid #333; /* Ensure the bottom is aligned with the line */
+  }
+  
+  .sub-category-item:not(.active):hover {
+    background-color: #5c5c5c; /* Change background color on hover */
+    color: #ececec; /* Change text color on hover */
+  }
+  
+  .sub-category-item h3 {
+    margin: 0; /* Remove default margin from h3 */
+    font-size: 14px; /* Adjust font size as needed */
+    font-weight: normal; /* Optional: adjust font weight */
+  }
+  
+  
+  .donate-now{
+    margin-left: 150px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .project-financial {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 150px;
+    margin-bottom: 100px;
+  }
+  
+  .pf1, .pf2, .pf3 {
+    flex: 1;
+    margin: 0 15px; /* Space between boxes */
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color for boxes */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Container for positioning the overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-financial img {
+    width: 100%; /* Make image take full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-bottom: 1px solid #ddd; /* Border between image and text */
+    margin-bottom: 15px; /* Space between image and text */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    pointer-events: none; /* Prevents overlay from interfering with interactions */
+    z-index: 1; /* Ensure overlay appears on top */
+  }
+  
+  .pf1:hover .overlay, .pf2:hover .overlay, .pf3:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .overlay span {
+    font-size: 18px; /* Font size for the overlay text */
+    font-weight: bold;
+    padding: 10px; /* Padding around the text */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background for better visibility */
+    border-radius: 5px; /* Rounded corners for the overlay text */
+  }
+  

@@ -1,0 +1,147 @@
+/* ConnectWallet.css */
+
+/* Prevent background scrolling */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Overlay that covers the whole page */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dimming effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+/* Modal content container */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 700px !important; /* Set the width to 700px */
+  max-width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  margin: auto; /* Ensure the modal is centered */
+}
+
+/* Add spacing between title and form */
+.modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center; /* Ensure the title is centered */
+}
+
+/* Form container to create two columns */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Each form group now has a defined width */
+.form-group {
+  width: 48%; /* Take up roughly half of the width */
+  margin-bottom: 15px; /* Add spacing between fields */
+}
+
+/* Full-width elements for file inputs and buttons */
+.form-group.full-width {
+  width: 100%;
+}
+
+/* Centered Show Password checkbox */
+.form-group.show-password-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  height: 38px; /* Set the height to match the input fields */
+  width: 100%; /* Ensure it is centered below the password fields */
+}
+
+.form-group.show-password-group input[type="checkbox"] {
+  margin-right: 10px; /* Adjust spacing between checkbox and label */
+  margin-top: 0;
+  height: 18px;
+  width: 18px;
+  align-self: center; /* Ensure it's aligned with the label */
+}
+
+.form-group.show-password-group label {
+  font-weight: normal;
+  cursor: pointer;
+  line-height: 1; /* Aligns text vertically with checkbox */
+  align-self: center; /* Align label vertically with the checkbox */
+  white-space: nowrap; /* Ensure the text does not wrap to the next line */
+  margin: 0;
+}
+
+/* Form labels aligned to the left */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Form input styles */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* File input styles */
+.modal-content input[type="file"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+/* Actions inside the modal (buttons) */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Cancel button specific styles */
+.modal-actions button:first-of-type {
+  background-color: #6c757d;
+}
+
+.modal-actions button:first-of-type:hover {
+  background-color: #5a6268;
+}
+
+/* Create button specific styles */
+.modal-actions button:last-of-type {
+  background-color: #dc3545;
+}
+
+.modal-actions button:last-of-type:hover {
+  background-color: #c82333;
+}

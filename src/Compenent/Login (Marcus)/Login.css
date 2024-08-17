@@ -1,0 +1,99 @@
+/* Overlay that covers the whole page */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dimming effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+/* Container for the modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px; /* Adjusted width for the modal */
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+/* Form Group - Align Labels to Left */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; /* Aligns the label to the left */
+}
+
+/* Labels for Form Fields */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input Fields - Full Width */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Modal Actions - Align buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Cancel Button */
+.modal-actions button:first-of-type {
+  background: #ccc;
+  color: black;
+}
+
+.modal-actions button:first-of-type:hover {
+  background: #b3b3b3;
+}
+
+/* Login Button */
+.modal-actions button:last-of-type {
+  background: #28a745;
+  color: white;
+}
+
+.modal-actions button:last-of-type:hover {
+  background: #218838;
+}
+
+/* Additional Styling for Switch Link */
+.switch-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.switch-text .login-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.switch-text .login-link:hover {
+  color: #0056b3;
+}
