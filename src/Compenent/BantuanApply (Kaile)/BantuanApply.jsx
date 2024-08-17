@@ -11,6 +11,7 @@ const BantuanApply = () => {
     income: ''
   });
 
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,12 +22,13 @@ const BantuanApply = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to an API or display a confirmation message
-    console.log(formData);
-    // Navigate to the BantuanHistory page
-    navigate('/bantuanhistory');
-  };
+  e.preventDefault();
+  // Handle form submission, e.g., send data to an API or display a confirmation message
+  console.log(formData);
+  // Navigate to Bantuan component with a state to indicate History view
+  navigate('/bantuan', { state: { activeTab: 'History' } });
+};
+
 
   return (
     <div className="bantuan-apply">

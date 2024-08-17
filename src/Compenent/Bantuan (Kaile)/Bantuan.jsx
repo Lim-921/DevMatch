@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Bantuan.css';
 import bantuan_project1 from '../../assets/bantuanProject1.jpg';
 import bantuan_project3 from '../../assets/bantuanProject2.jpg';
@@ -7,7 +7,10 @@ import bantuan_project2 from '../../assets/bantuanProject3.webp';
 
 const Bantuan = () => {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('available-financial-aid'); // Default active tab
+    const location = useLocation();
+    const initialTab = location.state?.activeTab || 'available-financial-aid'; // Default to 'available-financial-aid' if no state
+
+    const [activeTab, setActiveTab] = useState(initialTab);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,7 +23,7 @@ const Bantuan = () => {
     const historydetails = [
         { id: '001', name: 'Rahmah Cash Contribution / Sumbangan Tunai Rahmah (STR)', applicationDate: '2024-08-01', status: 'Success' },
         { id: '002', name: 'Program Subsidi Upah (Wage Subsidy Program)', applicationDate: '2024-08-05', status: 'Success' },
-        { id: '003', name: 'Bantuan SARA 2024 (Sumbangan Asas Rahmah)', applicationDate: '2024-08-10', status: 'Rejected' },
+        { id: '003', name: 'Bantuan SARA 2024 (Sumbangan Asas Rahmah)', applicationDate: '2024-08-10', status: 'Pending' },
     ];
 
     return (
@@ -74,14 +77,13 @@ const Bantuan = () => {
                     </div>
                 ) : (
                     <div className='history-content'>
-                        <div className='history-content'>
                         <div className='history-title'>
                             <div className='title-id'>ID</div>
                             <div className='title-name'>Name</div>
                             <div className='title-date'>Application Date</div>
                             <div className='title-status'>Status</div>
                         </div>
-                        {historydetails.map((historydetail, index) => (
+                        {historydetails.map((historydetail) => (
                             <div key={historydetail.id} className='history-item'>
                                 <div className='item-id'>{historydetail.id}</div>
                                 <div className='item-name'>{historydetail.name}</div>
@@ -89,7 +91,6 @@ const Bantuan = () => {
                                 <div className='item-status'>{historydetail.status}</div>
                             </div>
                         ))}
-                    </div>
                     </div>
                 )}
             </div>
