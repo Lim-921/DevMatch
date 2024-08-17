@@ -24,8 +24,8 @@ const BantuanApply = () => {
     e.preventDefault();
     // Handle form submission, e.g., send data to an API or display a confirmation message
     console.log(formData);
-    // Navigate back to the BantuanProject page
-    navigate('/bantuan-project');
+    // Navigate to the BantuanHistory page
+    navigate('/bantuanhistory');
   };
 
   return (
@@ -89,7 +89,6 @@ const BantuanApply = () => {
             />
           </label>
         </div>
-
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -97,4 +96,3 @@ const BantuanApply = () => {
 };
 
 export default BantuanApply;
-
