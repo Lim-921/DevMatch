@@ -16,7 +16,7 @@ const NavBar = () => {
   const [walletAddress, setWalletAddress] = useState(null);
   const [isSignOutModalOpen, setIsSignOutModalOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate(); // useNavigate for redirecting after sign out
+  const navigate = useNavigate(); // useNavigate for redirecting after sign out or wallet creation
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,6 @@ const NavBar = () => {
     // Removed toast.success from here to avoid duplicate calls
     closeModal(); // Close the modal after login
   };
-  
 
   const handleSubmit = async (data) => {
     try {
@@ -105,6 +104,7 @@ const NavBar = () => {
       );
 
       closeModal();
+      navigate("/mainpage"); // Redirect to the mainpage after wallet creation
     } catch (error) {
       console.error("Error creating wallet:", error);
       toast.error("Failed to create wallet. Please try again.");
