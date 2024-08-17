@@ -34,22 +34,22 @@
 .vote-contents {
   display: flex;
   justify-content: space-between;
-  gap: 5px; /* Gap between left and right sections */
+  gap: 5px;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 20px;
 }
 
 .project-left {
-  flex: 6; /* 60% width */
-  padding: 10px; /* Padding for spacing */
+  flex: 6;
+  padding: 10px;
 }
 
 .project-navbar {
   display: flex;
-  gap: 20px; /* Space between nav items */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 10px; /* Spacing between nav and content */
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
   margin-left: 40px;
 }
 
@@ -58,28 +58,28 @@
   padding: 5px 10px;
   cursor: pointer;
   font-size: 25px;
-  color: grey; /* Default color for nav items */
+  color: grey;
 }
 
 .nav-item.active {
-  color: black; /* Color when the item is active */
+  color: black;
 }
 
 .short-line {
   position: absolute;
-  bottom: -10px; /* Position below the text */
+  bottom: -10px;
   left: 0;
-  width: 100%; /* Match the width of the nav item */
-  height: 3px; /* Thickness of the line */
-  background: transparent; /* Default color of the line, invisible */
+  width: 100%;
+  height: 3px;
+  background: transparent;
 }
 
 .nav-item.active .short-line {
-  background: black; /* Line color when item is active */
+  background: black;
 }
 
 .project-about {
-  display: none; /* Initially hidden */
+  display: none;
   margin-left: 30px;
   margin-top: 30px;
   text-align: justify;
@@ -87,7 +87,7 @@
 }
 
 .project-about.active {
-  display: block; /* Show when active */
+  display: block;
 }
 
 .project-about p {
@@ -103,7 +103,7 @@
 }
 
 .project-comments {
-  display: none; /* Initially hidden */
+  display: none;
   margin-left: 30px;
   margin-top: 30px;
   text-align: left;
@@ -111,51 +111,51 @@
 }
 
 .project-comments.active {
-  display: block; /* Show when active */
+  display: block;
 }
 
 .project-comments .comment {
   display: flex;
   align-items: flex-start;
-  gap: 10px; /* Space between image and comment text */
-  margin-bottom: 15px; /* Space between comments */
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .project-comments img {
-  width: 50px; /* Width of the user image */
-  height: 50px; /* Height of the user image */
-  border-radius: 50%; /* Make the image round */
-  object-fit: cover; /* Maintain aspect ratio */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .project-comments .comment-content {
   display: flex;
-  flex-direction: column; /* Stack username and comment vertically */
+  flex-direction: column;
 }
 
 .project-comments .comment-username {
-  font-weight: bold; /* Make the username bold */
-  margin-bottom: 5px; /* Space between username and comment text */
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .project-comments .comment-text {
-  font-size: 16px; /* Font size for comments */
+  font-size: 16px;
 }
 
 .project-right {
-  flex: 4; /* 40% width */
-  padding: 10px; /* Padding for spacing */
+  flex: 4;
+  padding: 10px;
 }
 
 .project-voting-box {
   width: 80%;
-  height: 60%;
-  background: #fff; /* White background for the box */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Padding inside the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for the box */
+  height: 400px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
   gap: 10px;
   margin-top: 60px;
   margin-left: 60px;
@@ -163,7 +163,7 @@
 
 .comment {
   padding: 10px 0;
-  border-bottom: 1px solid #727272; /* Optional: adds a subtle border below each comment */
+  border-bottom: 1px solid #727272;
 }
 
 .comment-divider {
@@ -214,27 +214,6 @@
   font-size: 16px;
   margin-top: 20px;
   border: 0;
-  --b: 3px; /* border thickness */
-  --s: 0.45em; /* size of the corner */
-  --color: #373b44;
-
-  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background: conic-gradient(
-      from 90deg at var(--b) var(--b),
-      #0000 90deg,
-      var(--color) 0
-    )
-    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-    calc(100% - var(--b) - 2 * var(--_p));
-  transition: 0.3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: 0.6em;
-  font-size: 16px;
-  margin-top: 20px;
-  border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -249,7 +228,6 @@
   cursor: pointer;
 }
 
-/* Modal container */
 .modal {
   position: fixed;
   z-index: 1;
@@ -258,18 +236,17 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Modal content */
 .modal-content {
   background-color: #fff;
-  padding: 20px; /* Added padding for better spacing */
+  padding: 20px;
   border-radius: 10px;
-  width: 400px; /* Smaller width */
+  width: 400px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -280,11 +257,11 @@
   align-items: center;
   width: 90%;
   margin-left: 40px;
-  justify-content: center; /* Centered content */
+  justify-content: center;
   margin-bottom: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 0px; /* Added padding for spacing */
+  padding: 0px;
 }
 
 .modal-image {
@@ -296,7 +273,7 @@
 }
 
 .modal-title {
-  font-size: 24px; /* Adjusted size for the smaller box */
+  font-size: 24px;
   font-weight: 600;
   color: #000000;
 }
@@ -305,21 +282,20 @@
   margin-top: 20px;
   font-weight: bold;
   text-align: left;
-  margin-left: 20px; /* Center align prompt */
+  margin-left: 20px;
 }
 
 .comment-box {
-  width: 94%; /* Full width for the box */
-  height: 150px; /* Slightly smaller height */
+  width: 94%;
+  height: 150px;
   margin-top: 10px;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px; /* Adjusted margin for better spacing */
+  margin-bottom: 20px;
 }
 
-/* Close button */
 .close-button {
   position: absolute;
   top: 10px;
