@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import project3 from "../../assets/voteproject3.jpeg";
 import user_icon from "../../assets/user.png";
 import "./VoteProject.css";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const VoteProject = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -10,8 +11,8 @@ const VoteProject = () => {
   const [voteScore, setVoteScore] = useState(1024);
   const [isVoteAvailable, setIsVoteAvailable] = useState(true);
   const [donationAmount, setDonationAmount] = useState("");
-  const [mintAmount, setMintAmount] = useState(""); // State for minting amount
-  const [burnAmount, setBurnAmount] = useState(""); // State for burning amount
+  const [mintAmount, setMintAmount] = useState("");
+  const [burnAmount, setBurnAmount] = useState("");
 
   const handleVoteClick = () => {
     setIsModalOpen(true);
@@ -24,8 +25,8 @@ const VoteProject = () => {
   const handleConfirmVote = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const organizationAddress = "0xB2D2b53145e451D293eCCCb5324BB7f0CE5d0d56"; // Replace with actual organization address
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
+      const organizationAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before donating.");
@@ -62,14 +63,14 @@ const VoteProject = () => {
         body: JSON.stringify(payload),
       });
 
-      const responseData = await response.json(); // Only read the body once
+      const responseData = await response.json();
 
       console.log("Response status:", response.status);
       console.log("Response body:", responseData);
 
       if (response.ok) {
         const transactionHash = responseData.result.transactionHash;
-        console.log("Transaction Hash:", transactionHash); // Log the transaction hash
+        console.log("Transaction Hash:", transactionHash);
         toast.success(`Donation of ${donationAmount} tokens successful!`);
         setVoteScore(voteScore + 1);
         setIsVoteAvailable(false);
@@ -85,12 +86,11 @@ const VoteProject = () => {
     }
   };
 
-  // Function to handle minting tokens
   const handleMintTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // The owner wallet address
+      const ownerWalletAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before minting.");
@@ -107,8 +107,8 @@ const VoteProject = () => {
       const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
       const payload = {
-        wallet_address: ownerWalletAddress, // Use the owner wallet address
-        to: walletAddress, // Mint to the current wallet
+        wallet_address: ownerWalletAddress,
+        to: walletAddress,
         amount: mintAmount,
         contract_address: contractAddress,
         callback_url:
@@ -127,14 +127,14 @@ const VoteProject = () => {
         body: JSON.stringify(payload),
       });
 
-      const responseData = await response.json(); // Only read the body once
+      const responseData = await response.json();
 
       console.log("Minting Response status:", response.status);
       console.log("Minting Response body:", responseData);
 
       if (response.ok) {
         const transactionHash = responseData.result.transactionHash;
-        console.log("Minting Transaction Hash:", transactionHash); // Log the transaction hash
+        console.log("Minting Transaction Hash:", transactionHash);
         toast.success(`Minted ${mintAmount} tokens successfully!`);
       } else {
         toast.error(`Minting failed: ${responseData.message}`);
@@ -147,9 +147,9 @@ const VoteProject = () => {
 
   const handleBurnTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66";
+      const ownerWalletAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before burning tokens.");
@@ -167,7 +167,7 @@ const VoteProject = () => {
 
       const payload = {
         wallet_address: ownerWalletAddress,
-        to: walletAddress, // Address where tokens are being burned from
+        to: walletAddress,
         amount: burnAmount,
         contract_address: contractAddress,
         callback_url:
@@ -186,14 +186,14 @@ const VoteProject = () => {
         body: JSON.stringify(payload),
       });
 
-      const responseData = await response.json(); // Only read the body once
+      const responseData = await response.json();
 
       console.log("Burning Response status:", response.status);
       console.log("Burning Response body:", responseData);
 
       if (response.ok) {
         const transactionHash = responseData.result.transactionHash;
-        console.log("Burning Transaction Hash:", transactionHash); // Log the transaction hash
+        console.log("Burning Transaction Hash:", transactionHash);
         toast.success(`Burned ${burnAmount} tokens successfully!`);
       } else {
         const errorMessage = responseData.result || "An unknown error occurred";
@@ -207,6 +207,7 @@ const VoteProject = () => {
 
   return (
     <div>
+      <ToastContainer />
       <div className="project-info">
         <div className="image-container">
           <img src={project3} alt="Flood Mitigation Projects" />
@@ -358,7 +359,6 @@ const VoteProject = () => {
               placeholder="Type your comment ..."
             ></textarea>
 
-            {/* Add a field for specifying the donation amount */}
             <input
               type="number"
               className="donation-amount-input"
