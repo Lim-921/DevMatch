@@ -6,7 +6,7 @@
 .votepage-background {
     width: 100%;
     min-height: 25vh;
-    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(199, 199, 199, 0.4)); /* Gradient with 0.5 opacity */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(159, 159, 159, 0.5)); /* Gradient with 0.5 opacity */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -20,8 +20,6 @@
 .vote-title {
     margin-top: 85px;
     margin-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .vote-title p {
@@ -53,7 +51,6 @@
     width: 360px;
     height: auto;
     position: relative;
-    
 }
 
 .project-container img {

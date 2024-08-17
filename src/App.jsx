@@ -10,7 +10,9 @@ import Footer from "./Compenent/Footer (HaoZhe)/Footer";
 import Contact from "./Compenent/Contact (HaoZhe)/Contact";
 import Transaction from "./Compenent/Transaction (HaoZhe)/Transaction";
 import Category from "./Compenent/Category (Kaile)/Category";
-import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; // Import MainPage component
+import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; 
+import Vote from "./Compenent/Vote (Kaile)/Vote"; 
+import Donate from "./Compenent/Donate (Kaile)/Donate"
 
 const App = () => {
   return (
@@ -49,7 +51,13 @@ const App = () => {
           <Route path="/category" element={<Category />} />
 
           {/* MainPage Route */}
-          <Route path="/mainpage" element={<MainPage />} /> {/* Add this line */}
+          <Route path="/mainpage" element={<MainPage />} />
+
+          {/* Vote Page Route */}
+          <Route path="/vote" element={<Vote />} />
+
+          {/* Donate Page Route */}
+          <Route path="/donate" element={<Donate />} />
         </Routes>
       </div>
     </Router>

@@ -82,9 +82,11 @@ const MainPage = () => {
                             <div className='text-section'>
                                 <h2>Donate</h2>
                                 <p>Your donation plays a vital role in strengthening our community and supporting those in need. By contributing, you help provide essential services like healthcare, education, and housing to families facing economic challenges. Every gift helps reduce inequality and build a more inclusive society. Join us in making a difference—your generosity transforms lives and creates a brighter future for all.</p>
-                                <div className='button-donate'>
-                                    Donate Now
-                                </div>
+                                <Link to="/donate">
+                                    <div className='button-donate'>
+                                        Donate Now
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>

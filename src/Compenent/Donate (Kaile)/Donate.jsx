@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Vote.css';
+import './Donate.css';
 import vote_project1 from '../../assets/voteproject1.jpg';
 import vote_project2 from '../../assets/voteproject2.jpg';
 import vote_project3 from '../../assets/voteproject3.jpeg';
 
-const Vote = () => {
+const Donate = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const Vote = () => {
         <div>
             <div className='votepage-background'>
                 <div className='vote-title'>
-                    <h1>Vote for the Projects</h1>
+                    <h1>Donate for the Projects</h1>
                     <p>Your vote is key to influencing our nation's future. By choosing the government project you think will make the most significant difference, 
                         you help guide essential initiatives and ensure they get the backing they deserve. Every vote matters in advancing our community and enhancing 
                         our country's prosperity. Make an impact by supporting the projects that promise the greatest benefits for all. Your participation drives meaningful 
@@ -76,4 +76,4 @@ const Vote = () => {
     );
 };
 
-export default Vote;
+export default Donate;
