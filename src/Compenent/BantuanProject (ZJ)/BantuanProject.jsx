@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import project3 from '../../assets/voteproject3.jpeg';
 import user_icon from '../../assets/user.png';
 import './BantuanProject.css';
@@ -7,10 +8,10 @@ const BantuanProject = () => {
     const [activeTab, setActiveTab] = useState('about');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [voteScore, setVoteScore] = useState(1024);
-    const [isVoteAvailable, setIsVoteAvailable] = useState(true);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleVoteClick = () => {
-        setIsModalOpen(true);
+        navigate('/apply'); // Navigate to /apply when the button is clicked
     };
 
     const handleCloseModal = () => {
@@ -20,7 +21,6 @@ const BantuanProject = () => {
     const handleConfirmVote = () => {
         setVoteScore(voteScore + 1); 
         setIsModalOpen(false); 
-        setIsVoteAvailable(false);
     };
 
     return (
@@ -113,8 +113,6 @@ const BantuanProject = () => {
                             </div>
                             
                         </div>
-
-
                     </div>
 
                     <div className='project-right'>
@@ -130,12 +128,10 @@ const BantuanProject = () => {
                                 </div>
                                 <div className='vote-item'>
                                     <div className='vote-item-title'>No. of Supporters:</div>
-                                    <div className='vote-item-detail'>{voteScore}</div> {/* Update here */}
+                                    <div className='vote-item-detail'>{voteScore}</div>
                                 </div>
-                            {isVoteAvailable && (
-                                <button className='vote-now-button' onClick={handleVoteClick}>Vote Now</button>
-                            )}
-                                </div>
+                                <button className='vote-now-button' onClick={handleVoteClick}>Vote Now</button> {/* Update here */}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +155,6 @@ const BantuanProject = () => {
                     </div>
                 </div>
             )}
-
         </div>
     );
 };
