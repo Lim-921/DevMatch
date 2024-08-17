@@ -88,6 +88,10 @@ import UserProfile from "./Compenent/UserProfile (HaoZhe)/UserProfile";
           {/* BantuanProject Page Route */}
           <Route path="/apply" element={<BantuanApply />} />
 
+          <Route path="/bantuanhistory" element={<BantuanHistory />} />
+
+          <Route path="/userprofile" element={<UserProfile />} />
+
         </Routes>
       </div>
     </Router>
