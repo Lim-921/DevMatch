@@ -130,7 +130,7 @@ const BantuanProject = () => {
                                     <div className='vote-item-title'>No. of Supporters:</div>
                                     <div className='vote-item-detail'>{voteScore}</div>
                                 </div>
-                                <button className='vote-now-button' onClick={handleVoteClick}>Vote Now</button> {/* Update here */}
+                                <button className='vote-now-button' onClick={handleVoteClick}>Apply Now</button> {/* Update here */}
                             </div>
                         </div>
                     </div>
