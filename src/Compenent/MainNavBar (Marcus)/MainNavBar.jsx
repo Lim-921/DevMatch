@@ -39,10 +39,10 @@ const MainNavBar = () => {
         </RouterLink>
         <ul>
           <li>
-            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/mainpage">Home</RouterLink>
           </li>
           <li>
-            <RouterLink to="/financial-aid">Financial Aid</RouterLink>
+            <RouterLink to="/bantuan">Financial Aid</RouterLink>
           </li>
           <li>
             <RouterLink to="/donate">Donate</RouterLink>
@@ -52,7 +52,9 @@ const MainNavBar = () => {
           </li>
           <li>
             <Link to="/userprofile" className="btn">
-              {walletAddress ? truncateAddress(walletAddress) : "Connect Wallet"}
+              {walletAddress
+                ? truncateAddress(walletAddress)
+                : "Connect Wallet"}
             </Link>
           </li>
         </ul>
