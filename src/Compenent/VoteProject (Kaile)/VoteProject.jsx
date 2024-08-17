@@ -25,8 +25,8 @@ const VoteProject = () => {
   const handleConfirmVote = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const organizationAddress = "0xB2D2b53145e451D293eCCCb5324BB7f0CE5d0d56"; // Replace with actual organization address
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
+      const organizationAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before donating.");
@@ -88,9 +88,9 @@ const VoteProject = () => {
 
   const handleMintTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66";
+      const ownerWalletAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before minting.");
@@ -147,9 +147,9 @@ const VoteProject = () => {
 
   const handleBurnTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66";
+      const ownerWalletAddress = "0xee9932573169eC34d5371Cef2711517fA446909D"; // Default organization address
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
+      const contractAddress = "0x391363bF06ce402AA12a5Bfc81548B5d387354A2"; // Financial Aid 2400 contract address
 
       if (!walletAddress) {
         toast.error("Please connect your wallet before burning tokens.");
