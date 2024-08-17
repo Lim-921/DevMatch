@@ -11,11 +11,12 @@ import Footer from "./Compenent/Footer (HaoZhe)/Footer";
 import Contact from "./Compenent/Contact (HaoZhe)/Contact";
 import Transaction from "./Compenent/Transaction (HaoZhe)/Transaction";
 import Category from "./Compenent/Category (Kaile)/Category";
-import MainPage from "./Compenent/MainPage (Kaile)/MainPage"; // MainPage
-import Vote from "./Compenent/Vote (Kaile)/Vote"; // Vote Component
-import Donate from "./Compenent/Donate (Kaile)/Donate"; // Donate Component
-import { ToastContainer } from "react-toastify"; // Import ToastContainer
-import "react-toastify/dist/ReactToastify.css"; // Import Toast CSS
+import MainPage from "./Compenent/MainPage (Kaile)/MainPage";
+import Vote from "./Compenent/Vote (Kaile)/Vote"; 
+import Donate from "./Compenent/Donate (Kaile)/Donate"; 
+import VoteProject from "./Compenent/VoteProject (Kaile)/VoteProject";
+import { ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 
  const App = () => {
   return (
@@ -66,6 +67,9 @@ import "react-toastify/dist/ReactToastify.css"; // Import Toast CSS
 
           {/* Vote Page Route */}
           <Route path="/vote" element={<Vote />} />
+
+          {/* VoteProject Page Route */}
+          <Route path="/vote-project" element={<VoteProject />} />
 
           {/* Donate Page Route */}
           <Route path="/donate" element={<Donate />} />
