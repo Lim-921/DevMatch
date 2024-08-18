@@ -4,6 +4,7 @@ import './Bantuan.css';
 import bantuan_project1 from '../../assets/bantuanProject1.jpg';
 import bantuan_project3 from '../../assets/bantuanProject2.jpg';
 import bantuan_project2 from '../../assets/bantuanProject3.webp';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar';
 
 const Bantuan = () => {
     const navigate = useNavigate();
@@ -20,6 +21,10 @@ const Bantuan = () => {
         navigate('/bantuan-project');
     };
 
+    const handleBackToHomeClick = () => {
+        navigate('/mainpage'); 
+    };
+
     const historydetails = [
         { id: '001', name: 'Rahmah Cash Contribution / Sumbangan Tunai Rahmah (STR)', applicationDate: '2024-08-01', status: 'Success' },
         { id: '002', name: 'Program Subsidi Upah (Wage Subsidy Program)', applicationDate: '2024-08-05', status: 'Success' },
@@ -28,6 +33,7 @@ const Bantuan = () => {
 
     return (
         <div className='bantuan-page'>
+            <MainNavBar />
             <div className='bantuan-navbar'>
                 <div
                     className={`nav-item ${activeTab === 'available-financial-aid' ? 'active available-financial-aid-text' : ''}`}
@@ -91,6 +97,9 @@ const Bantuan = () => {
                                 <div className='item-status'>{historydetail.status}</div>
                             </div>
                         ))}
+                        <div className='back-to-home-button' onClick={handleBackToHomeClick}>
+                            Back to Home
+                        </div>
                     </div>
                 )}
             </div>

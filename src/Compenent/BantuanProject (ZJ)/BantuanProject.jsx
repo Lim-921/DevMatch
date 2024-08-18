@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './BantuanProject.css';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar';
 
 const BantuanProject = () => {
     
@@ -8,6 +9,7 @@ const BantuanProject = () => {
 
     return (
         <div>
+            <MainNavBar />
             <div className="project-info">
                 <div className="bantuan-title">
                     <h1>Rahmah Cash Contribution (STR)</h1>

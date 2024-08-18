@@ -4,6 +4,7 @@ import './Vote.css';
 import vote_project1 from '../../assets/voteproject1.jpg';
 import vote_project2 from '../../assets/voteproject2.jpg';
 import vote_project3 from '../../assets/voteproject3.jpeg';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar';
 
 const Vote = () => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Vote = () => {
 
     return (
         <div>
+            <MainNavBar />
             <div className='votepage-background'>
                 <div className='vote-title'>
                     <h1>Vote for the Projects</h1>
