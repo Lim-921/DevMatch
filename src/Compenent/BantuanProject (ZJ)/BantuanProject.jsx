@@ -10,15 +10,16 @@ const BantuanProject = () => {
     return (
         <div>
             <MainNavBar />
-            <div className="project-info">
-                <div className="bantuan-title">
+            <div className="project-info-container">
+                
+                <div className="bantuan-title-container">
                     <h1>Rahmah Cash Contribution (STR)</h1>
                     <hr className='divider'></hr>
                 </div>
 
-                <div className='bantuan-contents'>
-                    <div className='project-left'>
-                        <div className='project-about'>
+                <div className='bantuan-contents-container'>
+                    <div className='project-left-section'>
+                        <div className='project-about-section'>
                             <p>Bantuan SARA 2024 (Sumbangan Asas Rahmah) is a targeted subsidy program introduced in the 2024 Budget to support low-income individuals and families. The program aims to improve the economic status of vulnerable groups and ensure fairness in the distribution of aid.</p>
                             <p>Key Details:</p>
                             <ul>
@@ -41,10 +42,10 @@ const BantuanProject = () => {
                         </div>
                     </div>
 
-                    <div className='project-right'>
-                        <div className='project-voting-box'>
-                            <div className='voting-box-content'>
-                                <div className='eligible'>Eligible Requirements</div>
+                    <div className='project-right-section'>
+                        <div className='project-voting-box-container'>
+                            <div className='voting-box-content-container'>
+                                <div className='eligible-requirements'>Eligible Requirements</div>
                                 <div className='requirements'>
                                     <ul>
                                         <li>Malaysian citizen or permanent resident.</li>

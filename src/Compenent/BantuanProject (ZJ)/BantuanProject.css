@@ -1,4 +1,4 @@
-.project-info {
+.project-info-container {
     position: relative;
     width: 100%;
     margin-bottom: 50px;
@@ -10,7 +10,7 @@
     height: 40vh;
 }
 
-.bantuan-title h1 {
+.bantuan-title-container h1 {
     position: relative;
     margin-left: 10%;
     margin-top: 5%;
@@ -24,7 +24,7 @@
         -1px -1px 2px rgba(255, 255, 255, 0.4);
 }
 
-.bantuan-contents {
+.bantuan-contents-container {
     display: flex;
     justify-content: space-between;
     gap: 5px; /* Gap between left and right sections */
@@ -33,16 +33,16 @@
     margin-top: -2%;
 }
 
-.project-left {
+.project-left-section {
     flex: 6; /* 60% width */
     padding: 10px; /* Padding for spacing */
 }
 
-.bantuan-title .divider {
+.bantuan-title-container .divider {
     width: 80%;
 }
 
-.project-about {
+.project-about-section {
     display: block; /* Changed to block as it's initially shown */
     margin-left: 30px;
     margin-top: 30px;
@@ -50,19 +50,19 @@
     margin-right: 30px;
 }
 
-.project-about p {
+.project-about-section p {
     padding: 15px;
 }
 
-.project-about ul {
+.project-about-section ul {
     margin-left: 30px;
 }
 
-.project-about ul li {
+.project-about-section ul li {
     padding: 5px;
 }
 
-.project-comments {
+.project-comments-section {
     display: none; /* Initially hidden */
     margin-left: 30px;
     margin-top: 30px;
@@ -70,45 +70,44 @@
     margin-right: 30px;
 }
 
-.project-comments.active {
+.project-comments-section.active {
     display: block; /* Show when active */
 }
 
-.project-comments .comment {
+.project-comments-section .comment-item {
     display: flex;
     align-items: flex-start;
     gap: 10px; /* Space between image and comment text */
     margin-bottom: 15px; /* Space between comments */
 }
 
-.project-comments img {
+.project-comments-section img {
     width: 50px; /* Width of the user image */
     height: 50px; /* Height of the user image */
     border-radius: 50%; /* Make the image round */
     object-fit: cover; /* Maintain aspect ratio */
 }
 
-.project-comments .comment-content {
+.project-comments-section .comment-content {
     display: flex;
     flex-direction: column; /* Stack username and comment vertically */
 }
 
-.project-comments .comment-username {
+.project-comments-section .comment-username {
     font-weight: bold; /* Make the username bold */
     margin-bottom: 5px; /* Space between username and comment text */
 }
 
-.project-comments .comment-text {
+.project-comments-section .comment-text {
     font-size: 16px; /* Font size for comments */
 }
 
-/* Keep the project-right section unchanged */
-.project-right {
+.project-right-section {
     flex: 4; /* 40% width */
     padding: 10px; /* Padding for spacing */
 }
 
-.project-voting-box {
+.project-voting-box-container {
     width: 80%;
     height: 60%;
     background: #fff; /* White background for the box */
@@ -122,7 +121,7 @@
     margin-left: 60px;
 }
 
-.comment {
+.comment-item {
     padding: 10px 0;
     border-bottom: 1px solid #727272; /* Optional: adds a subtle border below each comment */
 }
@@ -132,14 +131,14 @@
     margin: 10px 0;
 }
 
-.voting-box-content {
+.voting-box-content-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 15px;
 }
 
-.voting-box-content .vote-item {
+.voting-box-content-container .vote-item {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
@@ -187,7 +186,7 @@
     cursor: pointer;
 }
 
-.eligible {
+.eligible-requirements {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;

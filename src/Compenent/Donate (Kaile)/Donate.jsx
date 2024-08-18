@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Donate.css';
-import vote_project1 from '../../assets/voteproject1.jpg';
+import vote_project1 from '../../assets/WHO.png';
 import vote_project2 from '../../assets/voteproject2.jpg';
 import vote_project3 from '../../assets/voteproject3.jpeg';
 import MainNavBar from '../MainNavBar (Marcus)/MainNavBar';
@@ -35,8 +35,8 @@ const Donate = () => {
             <div className='project-list'>
                 <div className='project-container'>
                     <img src={vote_project1} alt='Project 1'/>
-                    <h3>Rescue and Restore Campaign</h3>
-                    <p>Provides urgent aid and long-term support to communities in crisis. It includes emergency relief, medical assistance, temporary shelter, and rebuilding efforts to ensure recovery and resilience.</p>
+                    <h3>World Health Organization</h3>
+                    <p>The WHO leads global health efforts, setting standards and tackling diseases. Its successes include eradicating smallpox and advancing polio eradication, saving millions of lives worldwide.</p>
                     <div className='button-container'>
                         <div className='view-more-button'>View More</div>
                     </div>
