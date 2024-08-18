@@ -4,6 +4,7 @@ import './Bantuan.css';
 import bantuan_project1 from '../../assets/bantuanProject1.jpg';
 import bantuan_project3 from '../../assets/bantuanProject2.jpg';
 import bantuan_project2 from '../../assets/bantuanProject3.webp';
+import MainNavBar from '../MainNavBar (Marcus)/MainNavBar';
 
 const Bantuan = () => {
     const navigate = useNavigate();
@@ -32,6 +33,7 @@ const Bantuan = () => {
 
     return (
         <div className='bantuan-page'>
+            <MainNavBar />
             <div className='bantuan-navbar'>
                 <div
                     className={`nav-item ${activeTab === 'available-financial-aid' ? 'active available-financial-aid-text' : ''}`}

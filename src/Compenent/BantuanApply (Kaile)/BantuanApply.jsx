@@ -41,9 +41,9 @@ const BantuanApply = () => {
 
   const handleMintTokens = async () => {
     try {
+      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Consistent owner wallet address
       const walletAddress = sessionStorage.getItem('walletAddress');
-      const ownerWalletAddress = '0xB3d415ABFAcE59F73A928771bFA332763dbb6a3a';
-      const contractAddress = '0x5949bE4986C269B9833C28B7659A2824772b44e7';
+      const contractAddress = '0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38'; // Consistent contract address
 
       if (!walletAddress) {
         toast.error('Please connect your wallet before minting.');
@@ -58,10 +58,12 @@ const BantuanApply = () => {
       const payload = {
         wallet_address: ownerWalletAddress,
         to: walletAddress,
-        amount: mintAmount,
+        amount: mintAmount.toString(), // Convert amount to string
         contract_address: contractAddress,
         callback_url: import.meta.env.VITE_REDIRECT_URI || 'https://postman-echo.com/post?',
       };
+
+      console.log("Minting Payload:", payload);
 
       const response = await fetch(`${apiUrl}/api/token/mint`, {
         method: 'POST',
@@ -89,7 +91,7 @@ const BantuanApply = () => {
   const checkBalance = async () => {
     try {
       const walletAddress = sessionStorage.getItem('walletAddress');
-      const contractAddress = '0x5949bE4986C269B9833C28B7659A2824772b44e7'; // Replace with your contract address
+      const contractAddress = '0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38'; // Consistent contract address
 
       if (!walletAddress) {
         toast.error('Please connect your wallet before checking balance.');
@@ -105,6 +107,8 @@ const BantuanApply = () => {
         contract_address: contractAddress,
       };
 
+      console.log("Checking Balance Payload:", payload);
+
       const response = await fetch(`${apiUrl}/api/token/balance`, {
         method: 'POST',
         headers: {
@@ -118,8 +122,8 @@ const BantuanApply = () => {
       const responseData = await response.json();
 
       if (response.ok) {
-        setBalance(responseData.result.balance);
-        toast.success(`Token Balance: ${responseData.result.balance}`);
+        setBalance(responseData.result); // Assuming the result is the balance
+        toast.success(`Token Balance: ${responseData.result}`);
       } else {
         toast.error(`Failed to check balance: ${responseData.message}`);
       }
