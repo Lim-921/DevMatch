@@ -43,7 +43,7 @@ const UserProfile = () => {
     try {
       const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
         alert("Please connect your wallet before minting.");
@@ -101,7 +101,7 @@ const UserProfile = () => {
     try {
       const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Use the same contract address as in VoteProject
 
       if (!walletAddress) {
         alert("Please connect your wallet before burning.");
@@ -158,7 +158,7 @@ const UserProfile = () => {
   const checkBalance = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Use the same contract address as in VoteProject
 
       if (!walletAddress) {
         alert("Please connect your wallet before checking balance.");

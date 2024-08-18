@@ -21,6 +21,10 @@ const Bantuan = () => {
         navigate('/bantuan-project');
     };
 
+    const handleBackToHomeClick = () => {
+        navigate('/mainpage'); 
+    };
+
     const historydetails = [
         { id: '001', name: 'Rahmah Cash Contribution / Sumbangan Tunai Rahmah (STR)', applicationDate: '2024-08-01', status: 'Success' },
         { id: '002', name: 'Program Subsidi Upah (Wage Subsidy Program)', applicationDate: '2024-08-05', status: 'Success' },
@@ -93,6 +97,9 @@ const Bantuan = () => {
                                 <div className='item-status'>{historydetail.status}</div>
                             </div>
                         ))}
+                        <div className='back-to-home-button' onClick={handleBackToHomeClick}>
+                            Back to Home
+                        </div>
                     </div>
                 )}
             </div>
