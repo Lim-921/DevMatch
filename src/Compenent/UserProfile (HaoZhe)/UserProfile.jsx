@@ -43,7 +43,6 @@ const UserProfile = () => {
     try {
       const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const ownerWalletAddress = "0xB3d415ABFAcE59F73A928771bFA332763dbb6a3a";
       const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
 
       if (!walletAddress) {
