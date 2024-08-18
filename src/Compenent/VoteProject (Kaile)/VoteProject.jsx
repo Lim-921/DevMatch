@@ -4,6 +4,7 @@ import user_icon from "../../assets/user.png";
 import "./VoteProject.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MainNavBar from "../MainNavBar (Marcus)/MainNavBar";
 
 const VoteProject = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -207,6 +208,7 @@ const VoteProject = () => {
 
   return (
     <div>
+      <MainNavBar />
       <ToastContainer />
       <div className="project-info">
         <div className="image-container">
