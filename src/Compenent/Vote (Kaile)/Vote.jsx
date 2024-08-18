@@ -15,7 +15,7 @@ const Vote = () => {
     }, []);
 
     const handleViewMoreClick = () => {
-        navigate('/vote-project');
+        navigate('/voteproject2');
     };
 
     return (

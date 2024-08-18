@@ -371,41 +371,11 @@ const VoteProject = () => {
             />
 
             <button className="confirm-vote-button" onClick={handleConfirmVote}>
-              Confirm Vote
+              Confirm Donation
             </button>
           </div>
         </div>
       )}
-
-      {/* Minting section */}
-      <div className="mint-section">
-        <h3>Mint Tokens</h3>
-        <input
-          type="number"
-          className="mint-amount-input"
-          placeholder="Enter amount to mint"
-          value={mintAmount}
-          onChange={(e) => setMintAmount(e.target.value)}
-        />
-        <button className="mint-tokens-button" onClick={handleMintTokens}>
-          Mint Tokens
-        </button>
-      </div>
-
-      {/* Burning section */}
-      <div className="burn-section">
-        <h3>Burn Tokens</h3>
-        <input
-          type="number"
-          className="burn-amount-input"
-          placeholder="Enter amount to burn"
-          value={burnAmount}
-          onChange={(e) => setBurnAmount(e.target.value)}
-        />
-        <button className="burn-tokens-button" onClick={handleBurnTokens}>
-          Burn Tokens
-        </button>
-      </div>
     </div>
   );
 };

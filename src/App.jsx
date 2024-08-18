@@ -21,6 +21,7 @@ import BantuanApply from "./Compenent/BantuanApply (Kaile)/BantuanApply";
 import { ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import UserProfile from "./Compenent/UserProfile (HaoZhe)/UserProfile"; 
+import VoteProject2 from "./Compenent/VoteProject2/VoteProject2";
 
  const App = () => {
   return (
@@ -88,6 +89,8 @@ import UserProfile from "./Compenent/UserProfile (HaoZhe)/UserProfile";
           <Route path="/apply" element={<BantuanApply />} />
 
           <Route path="/userprofile" element={<UserProfile />} />
+
+          <Route path="/voteproject2" element={<VoteProject2/>} />
 
         </Routes>
       </div>
