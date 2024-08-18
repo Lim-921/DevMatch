@@ -30,10 +30,12 @@ const BantuanApply = () => {
     console.log(formData);
 
     // Mint 2000 tokens when the form is submitted
-    await handleMintTokens();
+    const mintResult = await handleMintTokens();
 
-    // Check balance after minting
-    await checkBalance();
+    // Only check balance if minting was successful
+    if (mintResult) {
+      await checkBalance();
+    }
 
     // Navigate to Bantuan component with a state to indicate History view
     navigate('/bantuan', { state: { activeTab: 'History' } });
@@ -47,7 +49,7 @@ const BantuanApply = () => {
 
       if (!walletAddress) {
         toast.error('Please connect your wallet before minting.');
-        return;
+        return false;
       }
 
       const mintAmount = 2000;
@@ -79,12 +81,15 @@ const BantuanApply = () => {
 
       if (response.ok) {
         toast.success(`Successfully minted 2000 tokens! Transaction Hash: ${responseData.result.transactionHash}`);
+        return true;
       } else {
         toast.error(`Minting failed: ${responseData.message}`);
+        return false;
       }
     } catch (error) {
       console.error('An error occurred during the minting process:', error);
       toast.error('An error occurred during the minting process.');
+      return false;
     }
   };
 

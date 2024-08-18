@@ -5,11 +5,36 @@ import profilePic from "../../assets/ProfilePicture.png";
 import verifiedIcon from "../../assets/verifiedlogo.png";
 import qrCodeImage from "../../assets/QRCode.png";
 
+const Notification = ({ message, onClose }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 3000); // Automatically close after 3 seconds
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, [onClose]);
+
+  return (
+    <div className="notification">
+      <div className="notification-content">
+        <span className="notification-icon">&#10003;</span>
+        <span>{message}</span>
+        <button className="notification-close-btn" onClick={onClose}>
+          &#10005;
+        </button>
+      </div>
+      <div className="notification-progress-bar"></div>
+    </div>
+  );
+};
+
 const UserProfile = () => {
-  const [showPopup, setShowPopup] = useState(null); // Use a single state for popup type
-  const [mintAmount, setMintAmount] = useState(""); // State for mint amount
-  const [burnAmount, setBurnAmount] = useState(""); // State for burn amount
-  const [balance, setBalance] = useState(null); // State for balance
+  const [showPopup, setShowPopup] = useState(null); 
+  const [mintAmount, setMintAmount] = useState(""); 
+  const [burnAmount, setBurnAmount] = useState(""); 
+  const [balance, setBalance] = useState(null); 
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
   const navigate = useNavigate();
 
   const user = {
@@ -41,17 +66,19 @@ const UserProfile = () => {
 
   const handleMintTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
+      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; 
       const walletAddress = sessionStorage.getItem("walletAddress");
       const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
-        alert("Please connect your wallet before minting.");
+        setNotificationMessage("Please connect your wallet before minting.");
+        setShowNotification(true);
         return;
       }
 
       if (mintAmount <= 0) {
-        alert("Please enter a valid amount to mint.");
+        setNotificationMessage("Please enter a valid amount to mint.");
+        setShowNotification(true);
         return;
       }
 
@@ -62,7 +89,7 @@ const UserProfile = () => {
       const payload = {
         wallet_address: ownerWalletAddress,
         to: walletAddress,
-        amount: mintAmount.toString(), // Convert amount to string
+        amount: mintAmount.toString(),
         contract_address: contractAddress,
         callback_url: import.meta.env.VITE_REDIRECT_URI || "https://postman-echo.com/post",
       };
@@ -86,30 +113,35 @@ const UserProfile = () => {
       if (response.ok) {
         const transactionHash = responseData.result.transactionHash;
         console.log("Minting Transaction Hash:", transactionHash);
-        alert(`Successfully minted ${mintAmount} tokens!`);
-        checkBalance(); // Update balance after minting
+        setNotificationMessage(`Successfully minted ${mintAmount} tokens!`);
+        setShowNotification(true);
+        checkBalance();
       } else {
-        alert(`Minting failed: ${responseData.message || "Unknown error"}`);
+        setNotificationMessage(`Minting failed: ${responseData.message || "Unknown error"}`);
+        setShowNotification(true);
       }
     } catch (error) {
       console.error("Error during minting:", error);
-      alert("An error occurred during the minting process.");
+      setNotificationMessage("An error occurred during the minting process.");
+      setShowNotification(true);
     }
   };
 
   const handleBurnTokens = async () => {
     try {
-      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
+      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66";
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Use the same contract address as in VoteProject
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
-        alert("Please connect your wallet before burning.");
+        setNotificationMessage("Please connect your wallet before burning.");
+        setShowNotification(true);
         return;
       }
 
       if (burnAmount <= 0) {
-        alert("Please enter a valid amount to burn.");
+        setNotificationMessage("Please enter a valid amount to burn.");
+        setShowNotification(true);
         return;
       }
 
@@ -120,7 +152,7 @@ const UserProfile = () => {
       const payload = {
         wallet_address: ownerWalletAddress,
         to: walletAddress,
-        amount: burnAmount.toString(), // Convert amount to string
+        amount: burnAmount.toString(),
         contract_address: contractAddress,
         callback_url: import.meta.env.VITE_REDIRECT_URI || "https://postman-echo.com/post",
       };
@@ -144,24 +176,28 @@ const UserProfile = () => {
       if (response.ok) {
         const transactionHash = responseData.result.transactionHash;
         console.log("Burning Transaction Hash:", transactionHash);
-        alert(`Successfully burned ${burnAmount} tokens!`);
-        checkBalance(); // Update balance after burning
+        setNotificationMessage(`Successfully burned ${burnAmount} tokens!`);
+        setShowNotification(true);
+        checkBalance();
       } else {
-        alert(`Burning failed: ${responseData.message || "Unknown error"}`);
+        setNotificationMessage(`Burning failed: ${responseData.message || "Unknown error"}`);
+        setShowNotification(true);
       }
     } catch (error) {
       console.error("Error during burning:", error);
-      alert("An error occurred during the burning process.");
+      setNotificationMessage("An error occurred during the burning process.");
+      setShowNotification(true);
     }
   };
 
   const checkBalance = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Use the same contract address as in VoteProject
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
-        alert("Please connect your wallet before checking balance.");
+        setNotificationMessage("Please connect your wallet before checking balance.");
+        setShowNotification(true);
         return;
       }
 
@@ -191,23 +227,32 @@ const UserProfile = () => {
       console.log("Balance Response body:", responseData);
 
       if (response.ok && responseData.result) {
-        setBalance(responseData.result); // Assuming the result is the balance
-        alert(`Token Balance: ${responseData.result}`);
+        setBalance(responseData.result);
+        setNotificationMessage(`Token Balance: ${responseData.result}`);
+        setShowNotification(true);
       } else {
-        alert(`Failed to check balance: ${responseData.message || "Unknown error"}`);
+        setNotificationMessage(`Failed to check balance: ${responseData.message || "Unknown error"}`);
+        setShowNotification(true);
       }
     } catch (error) {
       console.error("Error while checking balance:", error);
-      alert("An error occurred while checking the balance.");
+      setNotificationMessage("An error occurred while checking the balance.");
+      setShowNotification(true);
     }
   };
 
   useEffect(() => {
-    checkBalance(); // Check balance on initial load
+    checkBalance();
   }, []);
 
   return (
     <div className="userprofile">
+      {showNotification && (
+        <Notification
+          message={notificationMessage}
+          onClose={() => setShowNotification(false)}
+        />
+      )}
       <div className="profile-container">
         <div className="profile-content">
           <div className="profile-details">

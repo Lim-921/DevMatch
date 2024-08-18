@@ -228,3 +228,61 @@
 .back-btn:hover {
     background-color: #5a6268;
 }
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    z-index: 1000;
+    width: 320px;
+    height: 80px;
+    border-left: 5px solid #28a745;
+  }
+  
+  .notification-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .notification-icon {
+    background-color: #28a745;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  
+  .notification-message {
+    color: #333;
+    font-size: 16px;
+    flex-grow: 1;
+  }
+  
+  .notification-close-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .notification-close-btn:hover {
+    color: #333;
+  }
+  
+  .notification-progress-bar {
+    position: absolute;
+    bottom: 0;
+  }  
