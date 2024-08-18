@@ -1,0 +1,61 @@
+.bantuan-apply {
+    width: 50%;
+    margin: 5% auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bantuan-apply h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-category {
+    margin-bottom: 20px;
+  }
+  
+  .form-category h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .form-category label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .form-category input[type="text"],
+  .form-category input[type="number"],
+  .form-category input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

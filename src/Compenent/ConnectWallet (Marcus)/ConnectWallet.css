@@ -1,12 +1,10 @@
-/* ConnectWallet.css */
-
 /* Prevent background scrolling */
-.no-scroll {
+.create-wallet-no-scroll {
   overflow: hidden;
 }
 
 /* Overlay that covers the whole page */
-.modal-overlay {
+.create-wallet-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +18,7 @@
 }
 
 /* Modal content container */
-.modal-content {
+.create-wallet-modal-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -34,32 +32,32 @@
 }
 
 /* Add spacing between title and form */
-.modal-content h2 {
+.create-wallet-modal-content h2 {
   margin-bottom: 10px;
   font-size: 1.5em;
   text-align: center; /* Ensure the title is centered */
 }
 
 /* Form container to create two columns */
-.form-container {
+.create-wallet-form-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 /* Each form group now has a defined width */
-.form-group {
+.create-wallet-form-group {
   width: 48%; /* Take up roughly half of the width */
   margin-bottom: 15px; /* Add spacing between fields */
 }
 
 /* Full-width elements for file inputs and buttons */
-.form-group.full-width {
+.create-wallet-form-group.full-width {
   width: 100%;
 }
 
 /* Centered Show Password checkbox */
-.form-group.show-password-group {
+.create-wallet-form-group.show-password-group {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +66,7 @@
   width: 100%; /* Ensure it is centered below the password fields */
 }
 
-.form-group.show-password-group input[type="checkbox"] {
+.create-wallet-form-group.show-password-group input[type="checkbox"] {
   margin-right: 10px; /* Adjust spacing between checkbox and label */
   margin-top: 0;
   height: 18px;
@@ -76,7 +74,7 @@
   align-self: center; /* Ensure it's aligned with the label */
 }
 
-.form-group.show-password-group label {
+.create-wallet-form-group.show-password-group label {
   font-weight: normal;
   cursor: pointer;
   line-height: 1; /* Aligns text vertically with checkbox */
@@ -86,14 +84,14 @@
 }
 
 /* Form labels aligned to the left */
-.form-group label {
+.create-wallet-form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 /* Form input styles */
-.modal-content input {
+.create-wallet-modal-content input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -104,7 +102,7 @@
 }
 
 /* File input styles */
-.modal-content input[type="file"] {
+.create-wallet-modal-content input[type="file"] {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -112,36 +110,60 @@
 }
 
 /* Actions inside the modal (buttons) */
-.modal-actions {
+.create-wallet-modal-actions {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
 }
 
-.modal-actions button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+/* Ensure buttons have the same size */
+.create-wallet-modal-actions button {
+  flex: 1; /* Make buttons take equal space */
+  width: 150px;
+  
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 1em; /* Ensure font size is consistent */
+  margin: 0 5px; /* Add space between buttons */
 }
 
 /* Cancel button specific styles */
-.modal-actions button:first-of-type {
+.create-wallet-modal-actions button:first-of-type {
   background-color: #6c757d;
+  color: white;
 }
 
-.modal-actions button:first-of-type:hover {
+.create-wallet-modal-actions button:first-of-type:hover {
   background-color: #5a6268;
 }
 
 /* Create button specific styles */
-.modal-actions button:last-of-type {
+.create-wallet-modal-actions button:last-of-type {
   background-color: #dc3545;
+  color: white;
 }
 
-.modal-actions button:last-of-type:hover {
+.create-wallet-modal-actions button:last-of-type:hover {
   background-color: #c82333;
+}
+
+/* Switch to Login link styles */
+.create-wallet-switch-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555;
+  text-align: center; /* Center the text horizontally */
+  width: 100%; /* Ensure it takes the full width of its container */
+}
+
+.create-wallet-login-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.create-wallet-login-link:hover {
+  color: #0056b3;
 }

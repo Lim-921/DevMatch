@@ -16,11 +16,11 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
 
   useEffect(() => {
     // Disable scrolling on the background when the modal is open
-    document.body.classList.add("no-scroll");
+    document.body.classList.add("create-wallet-no-scroll");
 
     return () => {
       // Re-enable scrolling when the modal is closed
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove("create-wallet-no-scroll");
     };
   }, []);
 
@@ -56,12 +56,12 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="create-wallet-modal-overlay">
+      <div className="create-wallet-modal-content">
         <h2>Create Wallet</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-container">
-            <div className="form-group">
+          <div className="create-wallet-form-container">
+            <div className="create-wallet-form-group">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -71,7 +71,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -81,7 +81,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="ic">IC</label>
               <input
                 type="text"
@@ -91,7 +91,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="walletName">Wallet Name</label>
               <input
                 type="text"
@@ -101,7 +101,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="password">Password</label>
               <input
                 type={showPassword ? "text" : "password"}
@@ -111,7 +111,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 type={showPassword ? "text" : "password"}
@@ -121,7 +121,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group show-password-group">
+            <div className="create-wallet-form-group show-password-group">
               <input
                 type="checkbox"
                 id="showPassword"
@@ -130,7 +130,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
               />
               <label htmlFor="showPassword">Show Password</label>
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="icFront">Upload IC (Front)</label>
               <input
                 type="file"
@@ -140,7 +140,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="create-wallet-form-group">
               <label htmlFor="icBack">Upload IC (Back)</label>
               <input
                 type="file"
@@ -150,7 +150,7 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
                 required
               />
             </div>
-            <div className="form-group full-width">
+            <div className="create-wallet-form-group full-width">
               <label htmlFor="facePhoto">
                 Current Face Photo (For Identification)
               </label>
@@ -163,16 +163,16 @@ const CreateWalletModal = ({ onSubmit, onClose, onSwitchToLogin }) => {
               />
             </div>
           </div>
-          <div className="modal-actions">
+          <div className="create-wallet-modal-actions">
             <button type="button" onClick={onClose}>
               Cancel
             </button>
             <button type="submit">Create</button>
           </div>
         </form>
-        <p className="switch-text">
+        <p className="create-wallet-switch-text">
           Already a user?{" "}
-          <span className="login-link" onClick={onSwitchToLogin}>
+          <span className="create-wallet-login-link" onClick={onSwitchToLogin}>
             Login here
           </span>
         </p>

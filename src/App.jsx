@@ -17,8 +17,10 @@ import Donate from "./Compenent/Donate (Kaile)/Donate";
 import VoteProject from "./Compenent/VoteProject (Kaile)/VoteProject";
 import Bantuan from "./Compenent/Bantuan (Kaile)/Bantuan";
 import BantuanProject from "./Compenent/BantuanProject (ZJ)/BantuanProject";
+import BantuanApply from "./Compenent/BantuanApply (Kaile)/BantuanApply";
 import { ToastContainer } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css"; 
+import "react-toastify/dist/ReactToastify.css";
+import UserProfile from "./Compenent/UserProfile (HaoZhe)/UserProfile"; 
 
  const App = () => {
   return (
@@ -81,6 +83,11 @@ import "react-toastify/dist/ReactToastify.css";
 
           {/* BantuanProject Page Route */}
           <Route path="/bantuan-project" element={<BantuanProject />} />
+
+          {/* BantuanProject Page Route */}
+          <Route path="/apply" element={<BantuanApply />} />
+
+          <Route path="/userprofile" element={<UserProfile />} />
 
         </Routes>
       </div>
