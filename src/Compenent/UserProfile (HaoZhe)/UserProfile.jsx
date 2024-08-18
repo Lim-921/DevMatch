@@ -43,7 +43,7 @@ const UserProfile = () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
       const ownerWalletAddress = "0xB3d415ABFAcE59F73A928771bFA332763dbb6a3a";
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
         alert("Please connect your wallet before minting.");
@@ -90,7 +90,7 @@ const UserProfile = () => {
   const handleBurnTokens = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
         alert("Please connect your wallet before burning.");
@@ -133,7 +133,7 @@ const UserProfile = () => {
   const checkBalance = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
+      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
 
       if (!walletAddress) {
         alert("Please connect your wallet before checking balance.");
