@@ -41,27 +41,34 @@ const UserProfile = () => {
 
   const handleMintTokens = async () => {
     try {
+      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
       const walletAddress = sessionStorage.getItem("walletAddress");
       const ownerWalletAddress = "0xB3d415ABFAcE59F73A928771bFA332763dbb6a3a";
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
+      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
 
       if (!walletAddress) {
         alert("Please connect your wallet before minting.");
         return;
       }
 
+      if (mintAmount <= 0) {
+        alert("Please enter a valid amount to mint.");
+        return;
+      }
+
       const apiUrl = import.meta.env.VITE_API_URL;
       const clientId = import.meta.env.VITE_CLIENT_ID;
       const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+
       const payload = {
         wallet_address: ownerWalletAddress,
         to: walletAddress,
-        amount: parseInt(mintAmount), // Use the mintAmount entered by the user
+        amount: mintAmount.toString(), // Convert amount to string
         contract_address: contractAddress,
-        callback_url:
-          import.meta.env.VITE_REDIRECT_URI ||
-          "https://postman-echo.com/post",
+        callback_url: import.meta.env.VITE_REDIRECT_URI || "https://postman-echo.com/post",
       };
+
+      console.log("Minting Payload:", payload);
 
       const response = await fetch(`${apiUrl}/api/token/mint`, {
         method: "POST",
@@ -74,8 +81,12 @@ const UserProfile = () => {
       });
 
       const responseData = await response.json();
-      console.log("Mint Response:", responseData); // Debugging log
-      if (response.ok && responseData.result) {
+      console.log("Minting Response status:", response.status);
+      console.log("Minting Response body:", responseData);
+
+      if (response.ok) {
+        const transactionHash = responseData.result.transactionHash;
+        console.log("Minting Transaction Hash:", transactionHash);
         alert(`Successfully minted ${mintAmount} tokens!`);
         checkBalance(); // Update balance after minting
       } else {
@@ -89,22 +100,33 @@ const UserProfile = () => {
 
   const handleBurnTokens = async () => {
     try {
+      const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Use the same owner wallet address as in VoteProject
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
+      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
 
       if (!walletAddress) {
         alert("Please connect your wallet before burning.");
         return;
       }
 
+      if (burnAmount <= 0) {
+        alert("Please enter a valid amount to burn.");
+        return;
+      }
+
       const apiUrl = import.meta.env.VITE_API_URL;
       const clientId = import.meta.env.VITE_CLIENT_ID;
       const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+
       const payload = {
-        wallet_address: walletAddress,
-        amount: parseInt(burnAmount), // Use the burnAmount entered by the user
+        wallet_address: ownerWalletAddress,
+        to: walletAddress,
+        amount: burnAmount.toString(), // Convert amount to string
         contract_address: contractAddress,
+        callback_url: import.meta.env.VITE_REDIRECT_URI || "https://postman-echo.com/post",
       };
+
+      console.log("Burning Payload:", payload);
 
       const response = await fetch(`${apiUrl}/api/token/burn`, {
         method: "POST",
@@ -117,8 +139,12 @@ const UserProfile = () => {
       });
 
       const responseData = await response.json();
-      console.log("Burn Response:", responseData); // Debugging log
-      if (response.ok && responseData.result) {
+      console.log("Burning Response status:", response.status);
+      console.log("Burning Response body:", responseData);
+
+      if (response.ok) {
+        const transactionHash = responseData.result.transactionHash;
+        console.log("Burning Transaction Hash:", transactionHash);
         alert(`Successfully burned ${burnAmount} tokens!`);
         checkBalance(); // Update balance after burning
       } else {
@@ -133,7 +159,7 @@ const UserProfile = () => {
   const checkBalance = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38";
+      const contractAddress = "0x5949bE4986C269B9833C28B7659A2824772b44e7";
 
       if (!walletAddress) {
         alert("Please connect your wallet before checking balance.");
@@ -141,13 +167,15 @@ const UserProfile = () => {
       }
 
       const apiUrl = import.meta.env.VITE_API_URL;
-      const clientId = "9b16ae5638534ae1961fb370f874b6cc"; // Your client ID
-      const clientSecret = "sk_9b16ae5638534ae1961fb370f874b6cc"; // Your client secret
+      const clientId = import.meta.env.VITE_CLIENT_ID;
+      const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
       const payload = {
         wallet_address: walletAddress,
         contract_address: contractAddress,
       };
+
+      console.log("Checking Balance Payload:", payload);
 
       const response = await fetch(`${apiUrl}/api/token/balance`, {
         method: "POST",
@@ -160,7 +188,8 @@ const UserProfile = () => {
       });
 
       const responseData = await response.json();
-      console.log("Balance Response:", responseData); // Debugging log
+      console.log("Balance Response status:", response.status);
+      console.log("Balance Response body:", responseData);
 
       if (response.ok && responseData.result) {
         setBalance(responseData.result); // Assuming the result is the balance

@@ -25,7 +25,7 @@ const VoteProject = () => {
   const handleConfirmVote = async () => {
     try {
       const walletAddress = sessionStorage.getItem("walletAddress");
-      const organizationAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66"; // Replace with actual organization address
+      const organizationAddress = "0xB2D2b53145e451D293eCCCb5324BB7f0CE5d0d56"; // Replace with actual organization address
       const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
 
       if (!walletAddress) {
