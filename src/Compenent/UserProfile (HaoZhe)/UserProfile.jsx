@@ -261,7 +261,7 @@ const UserProfile = () => {
                   <div className="token-action">
                     <input
                       type="number"
-                      placeholder="Enter amount to mint"
+                      placeholder="Enter amount to top up"
                       value={mintAmount}
                       onChange={(e) => setMintAmount(e.target.value)}
                       className="amount-input"
@@ -270,7 +270,7 @@ const UserProfile = () => {
                       className="mint-token-btn"
                       onClick={handleMintTokens}
                     >
-                      Mint Tokens
+                      Top Up
                     </button>
                   </div>
                 </>
@@ -280,7 +280,7 @@ const UserProfile = () => {
                   <div className="token-action">
                     <input
                       type="number"
-                      placeholder="Enter amount to burn"
+                      placeholder="Enter amount to pay"
                       value={burnAmount}
                       onChange={(e) => setBurnAmount(e.target.value)}
                       className="amount-input"
@@ -289,7 +289,7 @@ const UserProfile = () => {
                       className="burn-token-btn"
                       onClick={handleBurnTokens}
                     >
-                      Burn Tokens
+                      Pay
                     </button>
                   </div>
                 </>
