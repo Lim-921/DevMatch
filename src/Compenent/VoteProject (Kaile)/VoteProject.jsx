@@ -148,7 +148,7 @@ const VoteProject = () => {
             const ownerWalletAddress = "0x09baC4dbeC02f6248Ff63cA7Fd8D3DAa7baEDB66";
             const walletAddress = sessionStorage.getItem("walletAddress");
             const contractAddress = "0x68402ba2FF52D05F4b3fE5EbeBF9D8Fa4a05Aa38"; // Replace with your contract address
-    
+
             if (!walletAddress) {
                 toast.error("Please connect your wallet before burning tokens.");
                 return;
